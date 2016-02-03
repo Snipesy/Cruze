@@ -1,0 +1,528 @@
+; ============================
+; CRUZE E47 EFI Live CAX
+; ============================
+;[OS]
+;PCM_VIN = 3FE000
+;
+[B0000]
+DESC.001 = If you are reading this, then the .cax file succesfully loaded (hurray!). It's possible that in the future EFI Live may add support which will cause conflicts.
+DESC.002 = CAX BY snipesy
+Desc.003 = This CAX is made for the 2014/2015 North American Cruze Diesel.
+Desc.004 = Version 1 - Initial/Beta
+Desc.005 = This CAX file comes with absolutely no warranty to the extent permitteed by law. Now that's a pretty moot point. Legally I have to say nothing, but if/when something goes wrong all I can really do for you is a short "sorry". By using EFI Live you should have an understanding of the risks assoisated with this business.
+VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 2 0 0
+ADDR = 000000 0 16 SED 0
+SI_SLOT = N/A 1 0 0 65535 65535 65535 65535
+ULABELS = .              .              .
+SI_ENUM = "65535=NOCHANGE"
+IM_ENUM = "65535=NOCHANGE"
+SI_ROW = .
+SI_COL = .
+; ===============================================================================
+[B0001]
+DESC.001 = Stored VIN in the ECM
+DESC.002 = I tried to get EFI to see the VIN directly, but it wouldn't read it. So I included it as a seperate table.
+DESC.003 = You should be using CALIBRATION only flashes. Do not full flash unless absolutely necessary. The CAX will convert the VIN to ASCII for you.
+VIEW = 7 "VIN" "ECM Properties" "" 1 2 0 0
+ADDR = 3FE000 0 8 SED 0
+SI_SLOT = ASCII 1 0 0 0 256 0 256
+ULABELS = .              .              .
+SI_ENUM = "65=A,66=B,67=C,68=D,69=E,70=F,71=G,72=H,73=I,74=J,75=K,76=L,77=M,78=N,79=O,80=P,81=Q,82=R,83=S,84=T,85=U,86=V,87=W,88=X,89=Y,90=Z,48=0,49=1,50=2,51=3,52=4,53=5,54=6,55=7,56=8,57=9"
+IM_ENUM = "65=A,66=B,67=C,68=D,69=E,70=F,71=G,72=H,73=I,74=J,75=K,76=L,77=M,78=N,79=O,80=P,81=Q,82=R,83=S,84=T,85=U,86=V,87=W,88=X,89=Y,90=Z,48=0,49=1,50=2,51=3,52=4,53=5,54=6,55=7,56=8,57=9"
+SI_ROW = "VIN (8 bit ASCII)" "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16"
+SI_COL = .
+; ===============================================================================
+[B0004]
+DESC.001 = This table indicates which Pedal response map will be used based on transmission gear and driver selected modes.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Pedal Position Mode Assignment" "Injection Quanity" "Torque Reference" 1 2 0 0
+ADDR = "33AE6C,33AE74,33AE7C,33AE84,33AE8C,33AE94,33AE9C,33AEA4" 0 16 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_1,1=Mode_2,2=Mode_3,3=Mode_4,4=Mode_5,5=Mode_6"
+IM_ENUM = "0=Mode_1,1=Mode_2,2=Mode_3,3=Mode_4,4=Mode_5,5=Mode_6"
+SI_COL = "Gear" "Reverse,P/N,1,2,3,4,5,6"
+SI_ROW = "." "CAN_A,CAN_B,CAN_C,Winter/Trailer"
+; ===============================================================================
+[B0007]
+DESC.001 = Maps the pedal position to a desired torque value.
+DESC.002 = .
+DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
+VIEW = 2 "Pedal Position Mode 1 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 33AEF0 0 16 SNM 0
+SI_SLOT = Nm 0.1 0 1 -1000 1000 -1000 1000
+ULABELS = .              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,850,1000,1250,1500,1750,2000,2500,2800,3600,3750,4000,4100,4300,5000,5100"
+SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
+; ===============================================================================
+[B0008]
+DESC.001 = Maps the pedal position to a desired torque value.
+DESC.002 = .
+DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
+VIEW = 2 "Pedal Position Mode 2 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 33B134 0 16 SNM 0
+SI_SLOT = Nm 0.1 0 1 -1000 1000 -1000 1000
+ULABELS = .              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,850,1000,1250,1500,1750,2000,2500,2800,3600,3750,4000,4100,4300,5000,5100"
+SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
+; ===============================================================================
+[B0009]
+DESC.001 = Maps the pedal position to a desired torque value.
+DESC.002 = .
+DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
+VIEW = 2 "Pedal Position Mode 3 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 33B378 0 16 SNM 0
+SI_SLOT = Nm 0.1 0 1 -1000 1000 -1000 1000
+ULABELS = .              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,850,1000,1250,1500,1750,2000,2500,2800,3600,3750,4000,4100,4300,5000,5100"
+SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
+; ===============================================================================
+[B0010]
+DESC.001 = Maps the pedal position to a desired torque value.
+DESC.002 = .
+DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
+VIEW = 2 "Pedal Position Mode 4 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 33B5BC 0 16 SNM 0
+SI_SLOT = Nm 0.1 0 1 -1000 1000 -1000 1000
+ULABELS = .              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,850,1000,1250,1500,1750,2000,2500,2800,3600,3750,4000,4100,4300,5000,5100"
+SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
+; ===============================================================================
+[B0011]
+DESC.001 = Maps the pedal position to a desired torque value.
+DESC.002 = .
+DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
+VIEW = 2 "Pedal Position Mode 5 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 33B800 0 16 SNM 0
+SI_SLOT = Nm 0.1 0 1 -1000 1000 -1000 1000
+ULABELS = .              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,850,1000,1250,1500,1750,2000,2500,2800,3600,3750,4000,4100,4300,5000,5100"
+SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
+; ===============================================================================
+[B0012]
+DESC.001 = Maps the pedal position to a desired torque value.
+DESC.002 = .
+DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
+VIEW = 2 "Pedal Position Mode 6 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 33BA44 0 16 SNM 0
+SI_SLOT = Nm 0.1 0 1 -1000 1000 -1000 1000
+ULABELS = .              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,850,1000,1250,1500,1750,2000,2500,2800,3600,3750,4000,4100,4300,5000,5100"
+SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
+; ===============================================================================
+[B0013]
+DESC.001 = Referenced to RPM and Actual Torque percentage, if the Actual Torque and Predicted Torque are different by this amount the ECM will set a P0606.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Predicted Engine Torque Percentage Allowed Difference" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 30075C 0 8 UNM 0
+SI_SLOT = % 0.3915 0 2 0 100 0 100
+ULABELS = .              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "Torque %" "0,10,20,30,40,50,60,70"
+SI_ROW = RPM "720,1200,1240,1520,2000,3000,4000,6000"
+; ===============================================================================
+[B0014]
+DESC.001 = Referenced to RPM and Pedal Position, this table defines the expected maximum torque percentage
+DESC.002 = the engine will be operating in.
+DESC.003 = .
+VIEW = 2 "Predicted Engine Torque Percentage" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3007EA 0 8 UNM 0
+SI_SLOT = % 0.3915 0 2 0 100 0 100
+ULABELS = .              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,920,1240,1480,1800,2520,3640,4000,4280,5000,5120"
+SI_ROW = "Throttle Position %" "0,16,26,30,38,50,60,70,83,100"
+; ===============================================================================
+[B0015]
+DESC.001 = For a given Injection 'on time' in uS and Fuel Rail Pressure, this table represents what would be the commanded mm3 amount. The values from this table are used for Torque calculations, not actual fuelling.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Maximum Expected Injection Quanity" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 300ADE 0 16 UNM 0
+SI_SLOT = mm3 0.01 0 2 0 300 0 300
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "Fuel Pressure MPa" "0.00,25.00,38.00,50.00,62.00,75.00,88.00,100.00,112.00,125.00,137.00,150.00,163.00,175.00,188.00,225.00"
+SI_ROW = "Injection Time Microseconds" "0.00,245.00,458.00,602.00,727.00,1207.00,1442.00,1567.00,1808.00,1931.00,2407.00,3025.00,3230.00,3448.00,3685.00,3970.00,4315.00,4715.00,5000.00,5663.00,6190.00,6738.00,7298.00,7858.00,8420.00"
+; ===============================================================================
+[B0502]
+DESC.001 = Maximum time any injection event can be commanded.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Injection Time Maximum" "Injection Quanity" "" 1 1 0 0
+ADDR = 3CD0FE 0 16 SNM 0
+SI_SLOT = mircroseconds .4 0 1 0 14000 0 14000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
+[B0200]
+DESC.001 = .
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Maximum Expected Engine Load Transient" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 301EE8 0 16 SNM 0
+SI_SLOT = % 0.3915 0 1 0 100 0 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "760,1000,1240,1480,1760,2000,2240,2520,2760,3000,3240,3480,3760,4000,4240,4520,4560,4600,4640,4680"
+SI_ROW = "Commanded Fuel mm3" "0,9,18,29,38,47,58,68,77,87,95,104,112,122,131,141,151,163,171,181"
+; ===============================================================================
+[B0201]
+DESC.001 = .
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Maximum Expected Engine Load Normal" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 30225E 0 16 SNM 0
+SI_SLOT = % 0.3915 0 1 0 100 0 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1240,1480,1760,2000,2240,2480,2760,3000,3240,3480,3760,4000,4240,4520,4560,4600"
+SI_ROW = "Commanded Fuel mm3" "0,5,9,13,17,23,28,33,36,42,46,50,55,60,64,68,73,78,83,86,90,94,100"
+; ===============================================================================
+[B0101]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Torque to Fuel 1" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 35199A 0 16 SNM 0
+SI_SLOT = Nm 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0102]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Torque to Fuel 2" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 351D36 0 16 SNM 0
+SI_SLOT = Nm 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0103]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Torque to Fuel 3" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3520D2 0 16 SNM 0
+SI_SLOT = Nm 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0104]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Torque to Fuel 4" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E018A 0 16 SNM 0
+SI_SLOT = Nm 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0105]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Torque to Fuel 5" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E04FE 0 16 SNM 0
+SI_SLOT = Nm 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0106]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Torque to Fuel 6" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E0BE6 0 16 SNM 0
+SI_SLOT = Nm 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0107]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Torque to Fuel 7" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E0F5A 0 16 SNM 0
+SI_SLOT = Nm 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0108]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Torque to Fuel 8" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E1A86 0 16 SNM 0
+SI_SLOT = Nm 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0109]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Torque to Fuel 9" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E1DFA 0 16 SNM 0
+SI_SLOT = Nm 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0301]
+DESC.001 = This is the first Map that defines the maximum commanded fuel based on engine RPM and the fuel reduction factor.The result from this map is then compared to that in {B0302} "Maximum Fuel Quantity Before Reduction 2" and the lowest value of the two is used against the Fuel Reduction Factor tables.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Maximum Fuel Quanity Before Reduction 1" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+ADDR = 3A7C98 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 250 0 250
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750,5000"
+SI_ROW = "Torque Reduction Factor" "0.00,0.10,0.20,0.30,0.40,0.50,0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,0.98"
+; ===============================================================================
+[B0302]
+DESC.001 = This is the first Map that defines the maximum commanded fuel based on engine RPM and the fuel reduction factor.The result from this map is then compared to that in {B0301} "Maximum Fuel Quantity Before Reduction 2" and the lowest value of the two is used against the Fuel Reduction Factor tables.
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Maximum Fuel Quanity Before Reduction 2" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+ADDR = 3A7EA4 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 250 0 250
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "Factor" "0,1"
+SI_ROW = "KMH" "0,1"
+; ===============================================================================
+[B0303]
+DESC.001 = This table defines the final mm3 value allowed from the result of the factors applied against {B0301} "Maximum Fuel Quantity Before Reduction 1" and {B0302} "Maximum Fuel Quantity Before Reduction 2".
+DESC.002 = The lowest value is always used.
+DESC.003 = .
+VIEW = 2 "Maximum Fuel Quanity Final" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+ADDR = 3A7BD4 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 250 0 250
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "kPa" "60,65,70,75,80,84,90,96"
+SI_ROW = "RPM" "1000,1500,2000,2500,3000,3500,4000,4500"
+; ===============================================================================
+[B0304]
+DESC.001 = Intake temperature factor used against the Max Commanded mm3 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Intake Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+ADDR = 3A7814 0 16 SNM 0
+SI_SLOT = Factor 0.000122 0 3 0 2 0 2
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "Deg/C" "-40,-30,-20,-10,0,10,20,30,40,50,60,70,80,90,100,110"
+SI_ROW = "RPM" "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,4000,4500,5000"
+; ===============================================================================
+[B0305]
+DESC.001 = Coolant temperature factor used against the Max Commanded mm3 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Coolant Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+ADDR = 3A7474 0 16 SNM 0
+SI_SLOT = Factor 0.000122 0 3 0 2 0 2
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "Deg/C" "-20,-10,0,10,20,30,40,100,108,110,112,114,116,121,130,140"
+SI_ROW = "Baro kPa" "55,60,65,70,75,80,85,90,95,100"
+; ===============================================================================
+[B0306]
+DESC.001 = Unknown temperature factor used against the Max Commanded mm3 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Unknown Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+ADDR = 3A7690 0 16 SNM 0
+SI_SLOT = Factor 0.000122 0 3 0 2 0 2
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "Deg/C" "-40,-30,-20,-10,0,10,20,30,40,50,60,70,80,90,100,110"
+SI_ROW = "Baro kPa" "55,60,65,70,75,80,85,90,95,100"
+; ===============================================================================
+[B0500]
+DESC.001 = This table defines the Injection Pulse widths (injector opening time) for all injection pulses.
+DESC.002 = The ECM selects the value from this table based on fuel delivery per stroke (mm3) and Commanded Fuel Pressure (MPa).
+DESC.003 = .
+VIEW = 2 "Injection Pulses" "Injection Quanity" "" 1 3 0 0
+ADDR = 3CD1F4 0 16 SNM 0
+SI_SLOT = mircroseconds 1 0 1 0 14000 0 14000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "Fuel Pressure MPa" "0.00,20.00,30.00,40.00,50.00,60.00,70.00,80.00,90.00,100.00,110.00,120.00,130.00,140.00,150.00,180.00"
+SI_ROW = "Commanded Fuel mm3" "0.00,0.05,0.50,1.00,2.00,4.00,6.00,8.00,10.00,12.00,14.00,18.00,25.00,35.00,45.00,55.00,65.00,80.00,95.00,120.00"
+; ===============================================================================
+[B0501]
+DESC.001 = .
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Injection Min Seperation Time" "Injection Quanity" "" 1 3 0 0
+ADDR = 3CD564 0 16 SNM 0
+SI_SLOT = mircroseconds 1 0 1 0 14000 0 14000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "Fuel Pressure MPa" "30,40,60,80,100,160"
+SI_ROW = "Commanded Fuel mm3" "1,3,5,8,30,80"
+; ===============================================================================
+[B6001]
+DESC.001 = . 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection Mode Assignment" "Injection Control" "" 1 2 0 0
+ADDR = "3AAF25,3AAF2A,3AAF2F,3AAF34,3AAF39,3AAF3E" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[B6002]
+DESC.001 = . 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Pilot 1 Injection Mode Assignment" "Injection Control" "" 1 2 0 0
+ADDR = "3AAF92,3AAF97,3AAF9C,3AAFA1,3AAFA6,3AAFAB" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[B6003]
+DESC.001 = . 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Pilot 2 Injection Mode Assignment" "Injection Control" "" 1 2 0 0
+ADDR = "3AAFFF,3AB004,3AB009,3AB00E,3AB013,3AB018" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[B6004]
+DESC.001 = . 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Pilot 3 (Unknown) Injection Mode Assignment" "Injection Control" "" 1 2 0 0
+ADDR = "3AB06B,3AB070,3AB075,3AB07A,3AB07F" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[B6005]
+DESC.001 = .
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Post 1 Injection Mode Assignment" "Injection Control" "" 1 2 0 0
+ADDR = "3AB0D9,3AB0DE,3AB0E3,3AB0E8,3AB0ED,3AB0F2" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[B6006]
+DESC.001 = .
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Post 2 Injection Mode Assignment" "Injection Control" "" 1 2 0 0
+ADDR = "3AB146,3AB14B,3AB150,3AB155,3AB15A,3AB15F" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[B1100]
+DESC.001 = Desired base idle speed dependent on engine coolant temperature. 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Base Idle Speed" "Idle" "" 1 2 0 0
+ADDR = 3AA62A 0 16 SNM 0
+SI_SLOT = RPM 0.5 0 0 0 7000 0 7000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = "Deg/C" "-130,-120,-110,-100,-90,-80,-70,-60,-50,-40,-30,-20,-10,0,10,20,30,39,40,60,70,80,90,100,110"
+; ===============================================================================
+[B2001]
+DESC.001 = . 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 1" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D057E 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 0 0 1000 0 1000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,900,1000,1100,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
