@@ -10,7 +10,7 @@ DESC.002 = CAX BY snipesy
 Desc.003 = This CAX is made for the 2014/2015 North American Cruze Diesel.
 Desc.004 = Version 1 - Initial/Beta
 Desc.005 = This CAX file comes with absolutely no warranty to the extent permitteed by law. Now that's a pretty moot point. Legally I have to say nothing, but if/when something goes wrong all I can really do for you is a short "sorry". By using EFI Live you should have an understanding of the risks assoisated with this business.
-VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 2 0 0
+VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
 SI_SLOT = N/A 1 0 0 65535 65535 65535 65535
 ULABELS = .              .              .
@@ -500,13 +500,221 @@ IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
 SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
+[B6101]
+DESC.001 = 16x16
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 1" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 305560 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100,105"
+; ===============================================================================
+[B6102]
+DESC.001 = 18x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 2" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3058D6 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100"
+; ===============================================================================
+[B6103]
+DESC.001 = 16x16
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 3" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 305C48 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100,105"
+; ===============================================================================
+[B6104]
+DESC.001 = 18x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 4" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 305FBE 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100"
+; ===============================================================================
+[B6105]
+DESC.001 = 16x14
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 5" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 30632C 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90"
+; ===============================================================================
+[B6106]
+DESC.001 = 18x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 6" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 309D1E 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100"
+; ===============================================================================
+[B6107]
+DESC.001 = 16x14
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 7" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 30A08C 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90"
+; ===============================================================================
+[B6108]
+DESC.001 = 16x16
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 8" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3AD190 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100,105"
+; ===============================================================================
+[B6109]
+DESC.001 = 16x14
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 9" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3AD500 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90"
+; ===============================================================================
+[B6110]
+DESC.001 = 16x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 10" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3AE2D2 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600.0,800.0,1000.0,1250.0,1500.0,1750.0,2000.0,2250.0,2500.0,2750.0,3000.0,3250.0,3500.0,3750.0,4000.0,4500.0"
+SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,70.0,80.0"
+; ===============================================================================
+[B6111]
+DESC.001 = 18x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 11" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3AE64A 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100"
+; ===============================================================================
+[B6112]
+DESC.001 = 17x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 12" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3AE9BC 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
+; ===============================================================================
+[B6113]
+DESC.001 = 16x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 13" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3AF0A2 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600.0,800.0,1000.0,1250.0,1500.0,1750.0,2000.0,2250.0,2500.0,2750.0,3000.0,3250.0,3500.0,3750.0,4000.0,4500.0"
+SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,70.0,80.0"
+; ===============================================================================
+[B6114]
+DESC.001 = 18x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 14" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3AF41A 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100"
+; ===============================================================================
+[B6115]
+DESC.001 = 17x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 15" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3AF78C 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
+; ===============================================================================
+[B6116]
+DESC.001 = 16x16(2)
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 16" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3AFE74 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
 [B1100]
 DESC.001 = Desired base idle speed dependent on engine coolant temperature. 
 DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Base Idle Speed" "Idle" "" 1 2 0 0
 ADDR = 3AA62A 0 16 SNM 0
-SI_SLOT = RPM 0.5 0 0 0 7000 0 7000
+SI_SLOT = RPM 0.5 0 1 0 7000 0 7000
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -519,7 +727,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Desired Boost 1" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D057E 0 16 SNM 0
-SI_SLOT = kPa 0.1 0 0 0 1000 0 1000
+SI_SLOT = kPa 0.1 0 1 0 1000 0 1000
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
