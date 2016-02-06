@@ -2,12 +2,13 @@
 ; CRUZE E47 EFI Live CAX
 ; ============================
 ;[OS]
+; VIN  (17 ASCII bytes)
 ;PCM_VIN = 3FE000
-;
+; =============
 [B0000]
 DESC.001 = If you are reading this, then the .cax file succesfully loaded (hurray!). It's possible that in the future EFI Live may add support which will cause conflicts.
 DESC.002 = CAX BY snipesy
-Desc.003 = This CAX is made for the 2014/2015 North American Cruze Diesel.
+Desc.003 = This CAX is made for the 2014 North American Diesel Cruze, however it will work for 2015s as well.
 Desc.004 = Version 1 - Initial/Beta
 Desc.005 = This CAX file comes with absolutely no warranty to the extent permitteed by law. Now that's a pretty moot point. Legally I have to say nothing, but if/when something goes wrong all I can really do for you is a short "sorry". By using EFI Live you should have an understanding of the risks assoisated with this business.
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
@@ -29,7 +30,7 @@ SI_SLOT = ASCII 1 0 0 0 256 0 256
 ULABELS = .              .              .
 SI_ENUM = "65=A,66=B,67=C,68=D,69=E,70=F,71=G,72=H,73=I,74=J,75=K,76=L,77=M,78=N,79=O,80=P,81=Q,82=R,83=S,84=T,85=U,86=V,87=W,88=X,89=Y,90=Z,48=0,49=1,50=2,51=3,52=4,53=5,54=6,55=7,56=8,57=9"
 IM_ENUM = "65=A,66=B,67=C,68=D,69=E,70=F,71=G,72=H,73=I,74=J,75=K,76=L,77=M,78=N,79=O,80=P,81=Q,82=R,83=S,84=T,85=U,86=V,87=W,88=X,89=Y,90=Z,48=0,49=1,50=2,51=3,52=4,53=5,54=6,55=7,56=8,57=9"
-SI_ROW = "VIN (8 bit ASCII)" "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16"
+SI_ROW = "VIN - 17 x (8 bit ASCII)" "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16"
 SI_COL = .
 ; ===============================================================================
 [B0004]
@@ -396,6 +397,19 @@ IM_ENUM = .
 SI_COL = "Deg/C" "-40,-30,-20,-10,0,10,20,30,40,50,60,70,80,90,100,110"
 SI_ROW = "Baro kPa" "55,60,65,70,75,80,85,90,95,100"
 ; ===============================================================================
+[B0351]
+DESC.001 = . 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Smoke Limiter, Vehicle Speed Adjust" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+ADDR = 3F373C 0 16 SNM 0
+SI_SLOT = Lambda 0.001 0 3 0 2 0 2
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "0.0,250.0,500.0,1000.0,1250.0,1500.0,2000.0,2500.0,3000.0,3500.0,4000.0,4500.0"
+SI_ROW = "Grams/Cylinder" "0.00,0.10,0.25,0.50,0.65,0.70,1.00,1.25,1.50,1.75,2.00,2.25"
+; ===============================================================================
 [B0500]
 DESC.001 = This table defines the Injection Pulse widths (injector opening time) for all injection pulses.
 DESC.002 = The ECM selects the value from this table based on fuel delivery per stroke (mm3) and Commanded Fuel Pressure (MPa).
@@ -423,7 +437,7 @@ SI_COL = "Fuel Pressure MPa" "30,40,60,80,100,160"
 SI_ROW = "Commanded Fuel mm3" "1,3,5,8,30,80"
 ; ===============================================================================
 [B6001]
-DESC.001 = . 
+DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
 DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection Mode Assignment" "Injection Control" "" 1 2 0 0
@@ -506,7 +520,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 1" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 305560 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -519,7 +533,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 2" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3058D6 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -532,7 +546,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 3" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 305C48 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -545,7 +559,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 4" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 305FBE 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -558,7 +572,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 5" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 30632C 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -571,7 +585,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 6" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 309D1E 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -584,7 +598,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 7" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 30A08C 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -597,7 +611,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 8" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AD190 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -610,7 +624,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 9" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AD500 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -623,7 +637,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 10" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AE2D2 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -636,7 +650,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 11" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AE64A 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -649,7 +663,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 12" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AE9BC 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -662,7 +676,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 13" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AF0A2 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -675,7 +689,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 14" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AF41A 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -688,7 +702,7 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 15" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AF78C 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -701,12 +715,155 @@ DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Main Injection 16" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AFE74 0 16 SNM 0
-SI_SLOT = Degrees 0.022 0 1 -100 100 -100 100
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
 SI_COL = RPM "750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
 SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B6117]
+DESC.001 = 18x17
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 17" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B01EE 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90,100"
+; ===============================================================================
+[B6118]
+DESC.001 = 16x16(2)
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 18" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B055C 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B6119]
+DESC.001 = 16x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 19" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B0C42 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600.0,800.0,1000.0,1250.0,1500.0,1750.0,2000.0,2250.0,2500.0,2750.0,3000.0,3250.0,3500.0,3750.0,4000.0,4500.0"
+SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,70.0,80.0"
+; ===============================================================================
+[B6120]
+DESC.001 = 17x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 20" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B0FB8 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
+; ===============================================================================
+[B6121]
+DESC.001 = 17x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 21" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B132C 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
+; ===============================================================================
+[B6122]
+DESC.001 = 16x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 22" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B1A12 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600.0,800.0,1000.0,1250.0,1500.0,1750.0,2000.0,2250.0,2500.0,2750.0,3000.0,3250.0,3500.0,3750.0,4000.0,4500.0"
+SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,70.0,80.0"
+; ===============================================================================
+[B6123]
+DESC.001 = 18x17
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 23" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B1D8E 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90,100"
+; ===============================================================================
+[B6124]
+DESC.001 = 17x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 24" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B20FC 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
+; ===============================================================================
+[B6125]
+DESC.001 = 16x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 25" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B27E2 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600.0,800.0,1000.0,1250.0,1500.0,1750.0,2000.0,2250.0,2500.0,2750.0,3000.0,3250.0,3500.0,3750.0,4000.0,4500.0"
+SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,70.0,80.0"
+; ===============================================================================
+[B6126]
+DESC.001 = 18x17
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 26" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B2B5E 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90,100"
+; ===============================================================================
+[B6127]
+DESC.001 = 17x15
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Main Injection 27" "Injection Timing" "Main Injection" 1 3 0 0
+ADDR = 3B2ECC 0 16 SNM 0
+SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
 ; ===============================================================================
 [B1100]
 DESC.001 = Desired base idle speed dependent on engine coolant temperature. 
@@ -721,16 +878,198 @@ IM_ENUM = .
 SI_COL = .
 SI_ROW = "Deg/C" "-130,-120,-110,-100,-90,-80,-70,-60,-50,-40,-30,-20,-10,0,10,20,30,39,40,60,70,80,90,100,110"
 ; ===============================================================================
-[B2001]
+[B1200]
 DESC.001 = . 
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "DPF Pressure Sensor Curve" "Engine Sensors" "" 1 2 0 0
+ADDR = 3DC96C 0 16 SNM 0
+SI_SLOT = PSI 0.0145 0 1 -100 100 	-100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = "Volts" "0.15,0.23,0.25,0.35,0.45,0.55,0.65,0.75,0.85,0.95,1.05,1.15,1.25,1.35,1.45,1.55,1.65,1.75,1.85,1.95,2.05,2.15,2.25,2.25,2.25"
+; ===============================================================================
+[B2001]
+DESC.001 = 19x16. 
 DESC.002 = .
 DESC.003 = .
 VIEW = 2 "Desired Boost 1" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D057E 0 16 SNM 0
-SI_SLOT = kPa 0.1 0 1 0 1000 0 1000
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
 SI_COL = RPM "800,900,1000,1100,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4500,4750,5000"
 SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B2002]
+DESC.001 = 19x16
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 2" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D08F2 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,900,1000,1100,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B2003]
+DESC.001 = 16x16
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 3" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D0C60 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4500,4750"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B2004]
+DESC.001 = 16x16 (2)
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 4" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D0EA4 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B2005]
+DESC.001 = 16x16 (2)
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 5" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D1470 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B2006]
+DESC.001 = 16x16 (2)
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 6" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D17E4 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B2007]
+DESC.001 = 16x16 (2)
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 7" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D1B58 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B2008]
+DESC.001 = 16x16 (2)
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 8" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D1D9C 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B2009]
+DESC.001 = 16x17
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 9" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D236A 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,85,90"
+; ===============================================================================
+[B2010]
+DESC.001 = 16x17
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 10" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D26DE 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,85,90"
+; ===============================================================================
+[B2011]
+DESC.001 = 16x16 (2)
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 11" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D2A50 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B2012]
+DESC.001 = 16x16 (2)
+DESC.002 = .
+DESC.003 = .
+VIEW = 2 "Desired Boost 12" "Turbo" "Desired Boost" 1 3 0 0
+ADDR = 3D2C94 0 16 SNM 0
+SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3500,3750,4000,4500,4750,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
+; ===============================================================================
+[B0901]
+DESC.001 = This table defines the allow error percentage between the measured airflow from the MAF to the expected airflow from the MAF.
+DESC.002 = If the difference is under by this amount a P0101 will set.
+DESC.003 = .
+VIEW = 3 "MAF Sensor Flow, Upper Error" "MAF Sensor" "" 1 3 0 0
+ADDR = 380CCC 0 16 SNM 0
+SI_SLOT = % 0.001 0 2 0 100 0 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = Atmo_kPa "5.0,10.0,17.5,50.0,150.0,300.0,350.0,475.0"
+SI_ROW = "Commanded Fuel mm3" "0.0,22.0,44.0,66.0,88.0,110.0,132.0,176.0"
+; ===============================================================================
+[B0902]
+DESC.001 = This table defines the allow error percentage between the measured airflow from the MAF to the expected airflow from the MAF.
+DESC.002 = If the difference is under by this amount a P0101 will set.
+DESC.003 = .
+VIEW = 3 "MAF Sensor Flow, Lower Error" "MAF Sensor" "" 1 3 0 0
+ADDR = 380D78 0 16 SNM 0
+SI_SLOT = % 0.001 0 2 0 100 0 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = Atmo_kPa "0,95,110,180,250,300,400,500"
+SI_ROW = "Commanded Fuel mm3" "2,4,70,80,100,120,140,200"
 ; ===============================================================================
