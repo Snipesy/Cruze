@@ -35,8 +35,8 @@ SI_COL = .
 ; ===============================================================================
 [B0004]
 DESC.001 = This table indicates which Pedal response map will be used based on transmission gear and driver selected modes.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Pedal Position Mode Assignment" "Injection Quanity" "Torque Reference" 1 2 0 0
 ADDR = "33AE6C,33AE74,33AE7C,33AE84,33AE8C,33AE94,33AE9C,33AEA4" 0 16 SED 0
 SI_SLOT = Mode 1 0 0 0 5 0 5
@@ -48,7 +48,7 @@ SI_ROW = "." "CAN_A,CAN_B,CAN_C,Winter/Trailer"
 ; ===============================================================================
 [B0007]
 DESC.001 = Maps the pedal position to a desired torque value.
-Desc.001 = 
+Desc.002 = 
 DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
 VIEW = 2 "Pedal Position Mode 1 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 33AEF0 0 16 SNM 0
@@ -61,7 +61,7 @@ SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
 ; ===============================================================================
 [B0008]
 DESC.001 = Maps the pedal position to a desired torque value.
-Desc.001 = 
+Desc.002 = 
 DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
 VIEW = 2 "Pedal Position Mode 2 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 33B134 0 16 SNM 0
@@ -74,7 +74,7 @@ SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
 ; ===============================================================================
 [B0009]
 DESC.001 = Maps the pedal position to a desired torque value.
-Desc.001 = 
+Desc.002 = 
 DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
 VIEW = 2 "Pedal Position Mode 3 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 33B378 0 16 SNM 0
@@ -87,7 +87,7 @@ SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
 ; ===============================================================================
 [B0010]
 DESC.001 = Maps the pedal position to a desired torque value.
-Desc.001 = 
+Desc.002 = 
 DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
 VIEW = 2 "Pedal Position Mode 4 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 33B5BC 0 16 SNM 0
@@ -100,7 +100,7 @@ SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
 ; ===============================================================================
 [B0011]
 DESC.001 = Maps the pedal position to a desired torque value.
-Desc.001 = 
+Desc.002 = 
 DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
 VIEW = 2 "Pedal Position Mode 5 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 33B800 0 16 SNM 0
@@ -113,7 +113,7 @@ SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
 ; ===============================================================================
 [B0012]
 DESC.001 = Maps the pedal position to a desired torque value.
-Desc.001 = 
+Desc.002 = 
 DESC.003 = See Also: {B0004} "Pedal Position Mode Assignment"
 VIEW = 2 "Pedal Position Mode 6 To Desired Torque" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 33BA44 0 16 SNM 0
@@ -126,8 +126,8 @@ SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
 ; ===============================================================================
 [B0013]
 DESC.001 = Referenced to RPM and Actual Torque percentage, if the Actual Torque and Predicted Torque are different by this amount the ECM will set a P0606.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Predicted Engine Torque Percentage Allowed Difference" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 30075C 0 8 UNM 0
 SI_SLOT = % 0.3915 0 2 0 100 0 100
@@ -140,7 +140,7 @@ SI_ROW = RPM "720,1200,1240,1520,2000,3000,4000,6000"
 [B0014]
 DESC.001 = Referenced to RPM and Pedal Position, this table defines the expected maximum torque percentage
 DESC.002 = the engine will be operating in.
-Desc.001 = 
+Desc.003 = 
 VIEW = 2 "Predicted Engine Torque Percentage" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 3007EA 0 8 UNM 0
 SI_SLOT = % 0.3915 0 2 0 100 0 100
@@ -152,8 +152,8 @@ SI_ROW = "Throttle Position %" "0,16,26,30,38,50,60,70,83,100"
 ; ===============================================================================
 [B0015]
 DESC.001 = For a given Injection 'on time' in uS and Fuel Rail Pressure, this table represents what would be the commanded mm3 amount. The values from this table are used for Torque calculations, not actual fuelling.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Maximum Expected Injection Quanity" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 300ADE 0 16 UNM 0
 SI_SLOT = mm3 0.01 0 2 0 300 0 300
@@ -165,8 +165,8 @@ SI_ROW = "Injection Time Microseconds" "0.00,245.00,458.00,602.00,727.00,1207.00
 ; ===============================================================================
 [B0502]
 DESC.001 = Maximum time any injection event can be commanded.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Injection Time Maximum" "Injection Quanity" "" 1 1 0 0
 ADDR = 3CD0FE 0 16 SNM 0
 SI_SLOT = mircroseconds .4 0 1 0 14000 0 14000
@@ -178,8 +178,8 @@ SI_ROW = .
 ; ===============================================================================
 [B0200]
 Desc.001 = 
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Maximum Expected Engine Load Transient" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 301EE8 0 16 SNM 0
 SI_SLOT = % 0.3915 0 1 0 100 0 100
@@ -191,8 +191,8 @@ SI_ROW = "Commanded Fuel mm3" "0,9,18,29,38,47,58,68,77,87,95,104,112,122,131,14
 ; ===============================================================================
 [B0201]
 Desc.001 = 
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Maximum Expected Engine Load Normal" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 30225E 0 16 SNM 0
 SI_SLOT = % 0.3915 0 1 0 100 0 100
@@ -204,8 +204,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,9,13,17,23,28,33,36,42,46,50,55,60,64,68,73,7
 ; ===============================================================================
 [B0101]
 DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Torque to Fuel 1" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 35199A 0 16 SNM 0
 SI_SLOT = Nm 0.01 0 1 0 200 0 200
@@ -217,8 +217,8 @@ SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,2
 ; ===============================================================================
 [B0102]
 DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Torque to Fuel 2" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 351D36 0 16 SNM 0
 SI_SLOT = Nm 0.01 0 1 0 200 0 200
@@ -230,8 +230,8 @@ SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,2
 ; ===============================================================================
 [B0103]
 DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Torque to Fuel 3" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 3520D2 0 16 SNM 0
 SI_SLOT = Nm 0.01 0 1 0 200 0 200
@@ -243,8 +243,8 @@ SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,2
 ; ===============================================================================
 [B0104]
 DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Torque to Fuel 4" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 3E018A 0 16 SNM 0
 SI_SLOT = Nm 0.01 0 1 0 200 0 200
@@ -256,8 +256,8 @@ SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,2
 ; ===============================================================================
 [B0105]
 DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Torque to Fuel 5" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 3E04FE 0 16 SNM 0
 SI_SLOT = Nm 0.01 0 1 0 200 0 200
@@ -269,8 +269,8 @@ SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,2
 ; ===============================================================================
 [B0106]
 DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Torque to Fuel 6" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 3E0BE6 0 16 SNM 0
 SI_SLOT = Nm 0.01 0 1 0 200 0 200
@@ -282,8 +282,8 @@ SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,2
 ; ===============================================================================
 [B0107]
 DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Torque to Fuel 7" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 3E0F5A 0 16 SNM 0
 SI_SLOT = Nm 0.01 0 1 0 200 0 200
@@ -295,8 +295,8 @@ SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,2
 ; ===============================================================================
 [B0108]
 DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Torque to Fuel 8" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 3E1A86 0 16 SNM 0
 SI_SLOT = Nm 0.01 0 1 0 200 0 200
@@ -308,8 +308,8 @@ SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,2
 ; ===============================================================================
 [B0109]
 DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Torque to Fuel 9" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 3E1DFA 0 16 SNM 0
 SI_SLOT = Nm 0.01 0 1 0 200 0 200
@@ -321,8 +321,8 @@ SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,2
 ; ===============================================================================
 [B0301]
 DESC.001 = This is the first Map that defines the maximum commanded fuel based on engine RPM and the fuel reduction factor.The result from this map is then compared to that in {B0302} "Maximum Fuel Quantity Before Reduction 2" and the lowest value of the two is used against the Fuel Reduction Factor tables.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Maximum Fuel Quanity Before Reduction 1" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3A7C98 0 16 SNM 0
 SI_SLOT = mm3 0.01 0 1 0 250 0 250
@@ -334,8 +334,8 @@ SI_ROW = "Torque Reduction Factor" "0.00,0.10,0.20,0.30,0.40,0.50,0.55,0.60,0.65
 ; ===============================================================================
 [B0302]
 DESC.001 = This is the first Map that defines the maximum commanded fuel based on engine RPM and the fuel reduction factor.The result from this map is then compared to that in {B0301} "Maximum Fuel Quantity Before Reduction 2" and the lowest value of the two is used against the Fuel Reduction Factor tables.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Maximum Fuel Quanity Before Reduction 2" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3A7EA4 0 16 SNM 0
 SI_SLOT = mm3 0.01 0 1 0 250 0 250
@@ -348,7 +348,7 @@ SI_ROW = "KMH" "0,1"
 [B0303]
 DESC.001 = This table defines the final mm3 value allowed from the result of the factors applied against {B0301} "Maximum Fuel Quantity Before Reduction 1" and {B0302} "Maximum Fuel Quantity Before Reduction 2".
 DESC.002 = The lowest value is always used.
-Desc.001 = 
+Desc.003 = 
 VIEW = 2 "Maximum Fuel Quanity Final" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3A7BD4 0 16 SNM 0
 SI_SLOT = mm3 0.01 0 1 0 250 0 250
@@ -360,8 +360,8 @@ SI_ROW = "RPM" "1000,1500,2000,2500,3000,3500,4000,4500"
 ; ===============================================================================
 [B0304]
 DESC.001 = Intake temperature factor used against the Max Commanded mm3 
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Intake Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3A7814 0 16 SNM 0
 SI_SLOT = Factor 0.000122 0 3 0 2 0 2
@@ -373,8 +373,8 @@ SI_ROW = "RPM" "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,4
 ; ===============================================================================
 [B0305]
 DESC.001 = Coolant temperature factor used against the Max Commanded mm3 
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Coolant Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3A7474 0 16 SNM 0
 SI_SLOT = Factor 0.000122 0 3 0 2 0 2
@@ -386,8 +386,8 @@ SI_ROW = "Baro kPa" "55,60,65,70,75,80,85,90,95,100"
 ; ===============================================================================
 [B0306]
 DESC.001 = Unknown temperature factor used against the Max Commanded mm3 
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Unknown Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3A7690 0 16 SNM 0
 SI_SLOT = Factor 0.000122 0 3 0 2 0 2
@@ -399,8 +399,8 @@ SI_ROW = "Baro kPa" "55,60,65,70,75,80,85,90,95,100"
 ; ===============================================================================
 [B0351]
 Desc.001 =  
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Smoke Limiter, Vehicle Speed Adjust" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3F373C 0 16 SNM 0
 SI_SLOT = Lambda 0.001 0 3 0 2 0 2
@@ -413,7 +413,7 @@ SI_ROW = "Grams/Cylinder" "0.00,0.10,0.25,0.50,0.65,0.70,1.00,1.25,1.50,1.75,2.0
 [B0500]
 DESC.001 = This table defines the Injection Pulse widths (injector opening time) for all injection pulses.
 DESC.002 = The ECM selects the value from this table based on fuel delivery per stroke (mm3) and Commanded Fuel Pressure (MPa).
-Desc.001 = 
+Desc.003 = 
 VIEW = 2 "Injection Pulses" "Injection Quanity" "" 1 3 0 0
 ADDR = 3CD1F4 0 16 SNM 0
 SI_SLOT = mircroseconds 1 0 1 0 14000 0 14000
@@ -425,8 +425,8 @@ SI_ROW = "Commanded Fuel mm3" "0.00,0.05,0.50,1.00,2.00,4.00,6.00,8.00,10.00,12.
 ; ===============================================================================
 [B0501]
 Desc.001 = 
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Injection Min Seperation Time" "Injection Quanity" "" 1 3 0 0
 ADDR = 3CD564 0 16 SNM 0
 SI_SLOT = mircroseconds 1 0 1 0 14000 0 14000
@@ -438,8 +438,8 @@ SI_ROW = "Commanded Fuel mm3" "1,3,5,8,30,80"
 ; ===============================================================================
 [B6001]
 DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection Mode Assignment" "Injection Control" "" 1 2 0 0
 ADDR = "3AAF25,3AAF2A,3AAF2F,3AAF34,3AAF39,3AAF3E" 0 8 SED 0
 SI_SLOT = Mode 1 0 0 0 5 0 5
@@ -451,8 +451,8 @@ SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [B6002]
 Desc.001 =  
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Pilot 1 Injection Mode Assignment" "Injection Control" "" 1 2 0 0
 ADDR = "3AAF92,3AAF97,3AAF9C,3AAFA1,3AAFA6,3AAFAB" 0 8 SED 0
 SI_SLOT = Mode 1 0 0 0 5 0 5
@@ -464,8 +464,8 @@ SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [B6003]
 Desc.001 =  
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Pilot 2 Injection Mode Assignment" "Injection Control" "" 1 2 0 0
 ADDR = "3AAFFF,3AB004,3AB009,3AB00E,3AB013,3AB018" 0 8 SED 0
 SI_SLOT = Mode 1 0 0 0 5 0 5
@@ -477,8 +477,8 @@ SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [B6004]
 Desc.001 =  
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Pilot 3 (Unknown) Injection Mode Assignment" "Injection Control" "" 1 2 0 0
 ADDR = "3AB06B,3AB070,3AB075,3AB07A,3AB07F" 0 8 SED 0
 SI_SLOT = Mode 1 0 0 0 5 0 5
@@ -490,8 +490,8 @@ SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [B6005]
 Desc.001 = 
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Post 1 Injection Mode Assignment" "Injection Control" "" 1 2 0 0
 ADDR = "3AB0D9,3AB0DE,3AB0E3,3AB0E8,3AB0ED,3AB0F2" 0 8 SED 0
 SI_SLOT = Mode 1 0 0 0 5 0 5
@@ -503,8 +503,8 @@ SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [B6006]
 Desc.001 = 
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Post 2 Injection Mode Assignment" "Injection Control" "" 1 2 0 0
 ADDR = "3AB146,3AB14B,3AB150,3AB155,3AB15A,3AB15F" 0 8 SED 0
 SI_SLOT = Mode 1 0 0 0 5 0 5
@@ -516,8 +516,8 @@ SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [B6101]
 DESC.001 = 16x16
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 1" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 305560 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -529,8 +529,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100,105"
 ; ===============================================================================
 [B6102]
 DESC.001 = 18x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 2" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3058D6 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -542,8 +542,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100"
 ; ===============================================================================
 [B6103]
 DESC.001 = 16x16
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 3" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 305C48 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -555,8 +555,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100,105"
 ; ===============================================================================
 [B6104]
 DESC.001 = 18x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 4" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 305FBE 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -568,8 +568,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100"
 ; ===============================================================================
 [B6105]
 DESC.001 = 16x14
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 5" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 30632C 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -581,8 +581,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90"
 ; ===============================================================================
 [B6106]
 DESC.001 = 18x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 6" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 309D1E 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -594,8 +594,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100"
 ; ===============================================================================
 [B6107]
 DESC.001 = 16x14
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 7" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 30A08C 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -607,8 +607,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90"
 ; ===============================================================================
 [B6108]
 DESC.001 = 16x16
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 8" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AD190 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -620,8 +620,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100,105"
 ; ===============================================================================
 [B6109]
 DESC.001 = 16x14
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 9" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AD500 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -633,8 +633,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90"
 ; ===============================================================================
 [B6110]
 DESC.001 = 16x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 10" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AE2D2 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -646,8 +646,8 @@ SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,5
 ; ===============================================================================
 [B6111]
 DESC.001 = 18x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 11" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AE64A 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -659,8 +659,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100"
 ; ===============================================================================
 [B6112]
 DESC.001 = 17x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 12" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AE9BC 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -672,8 +672,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
 ; ===============================================================================
 [B6113]
 DESC.001 = 16x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 13" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AF0A2 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -685,8 +685,8 @@ SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,5
 ; ===============================================================================
 [B6114]
 DESC.001 = 18x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 14" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AF41A 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -698,8 +698,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,100"
 ; ===============================================================================
 [B6115]
 DESC.001 = 17x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 15" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AF78C 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -711,8 +711,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
 ; ===============================================================================
 [B6116]
 DESC.001 = 16x16(2)
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 16" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3AFE74 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -724,8 +724,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B6117]
 DESC.001 = 18x17
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 =  
 VIEW = 2 "Main Injection 17" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B01EE 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -737,8 +737,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90,100
 ; ===============================================================================
 [B6118]
 DESC.001 = 16x16(2)
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 18" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B055C 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -750,8 +750,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B6119]
 DESC.001 = 16x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 19" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B0C42 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -763,8 +763,8 @@ SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,5
 ; ===============================================================================
 [B6120]
 DESC.001 = 17x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 20" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B0FB8 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -776,8 +776,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
 ; ===============================================================================
 [B6121]
 DESC.001 = 17x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 21" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B132C 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -789,8 +789,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
 ; ===============================================================================
 [B6122]
 DESC.001 = 16x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 22" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B1A12 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -802,8 +802,8 @@ SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,5
 ; ===============================================================================
 [B6123]
 DESC.001 = 18x17
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 23" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B1D8E 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -815,8 +815,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90,100
 ; ===============================================================================
 [B6124]
 DESC.001 = 17x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 24" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B20FC 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -828,8 +828,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
 ; ===============================================================================
 [B6125]
 DESC.001 = 16x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 25" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B27E2 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -841,8 +841,8 @@ SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,5
 ; ===============================================================================
 [B6126]
 DESC.001 = 18x17
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 26" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B2B5E 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -854,8 +854,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90,100
 ; ===============================================================================
 [B6127]
 DESC.001 = 17x15
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Main Injection 27" "Injection Timing" "Main Injection" 1 3 0 0
 ADDR = 3B2ECC 0 16 SNM 0
 SI_SLOT = Degrees 0.022 0 1 -25 50 -25 50
@@ -867,8 +867,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80"
 ; ===============================================================================
 [B1100]
 DESC.001 = Desired base idle speed dependent on engine coolant temperature. 
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Base Idle Speed" "Idle" "" 1 2 0 0
 ADDR = 3AA62A 0 16 SNM 0
 SI_SLOT = RPM 0.5 0 1 0 7000 0 7000
@@ -880,8 +880,8 @@ SI_ROW = "Deg/C" "-130,-120,-110,-100,-90,-80,-70,-60,-50,-40,-30,-20,-10,0,10,2
 ; ===============================================================================
 [B1200]
 Desc.001 =  
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "DPF Pressure Sensor Curve" "Engine Sensors" "" 1 2 0 0
 ADDR = 3DC96C 0 16 SNM 0
 SI_SLOT = PSI 0.0145 0 1 -100 100 -100 100
@@ -893,8 +893,8 @@ SI_ROW = "Volts" "0.15,0.23,0.25,0.35,0.45,0.55,0.65,0.75,0.85,0.95,1.05,1.15,1.
 ; ===============================================================================
 [B2001]
 DESC.001 = 19x16. 
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 1" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D057E 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -906,8 +906,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2002]
 DESC.001 = 19x16
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 2" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D08F2 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -919,8 +919,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2003]
 DESC.001 = 16x16
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 3" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D0C60 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -932,8 +932,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2004]
 DESC.001 = 16x16 (2)
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 4" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D0EA4 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -945,8 +945,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2005]
 DESC.001 = 16x16 (2)
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 5" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D1470 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -958,8 +958,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2006]
 DESC.001 = 16x16 (2)
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 6" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D17E4 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -971,8 +971,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2007]
 DESC.001 = 16x16 (2)
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 7" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D1B58 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -984,8 +984,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2008]
 DESC.001 = 16x16 (2)
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 8" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D1D9C 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -997,8 +997,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2009]
 DESC.001 = 16x17
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 9" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D236A 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -1010,8 +1010,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,85,90"
 ; ===============================================================================
 [B2010]
 DESC.001 = 16x17
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 10" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D26DE 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -1023,8 +1023,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,85,90"
 ; ===============================================================================
 [B2011]
 DESC.001 = 16x16 (2)
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 11" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D2A50 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -1036,8 +1036,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2012]
 DESC.001 = 16x16 (2)
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "Desired Boost 12" "Turbo" "Desired Boost" 1 3 0 0
 ADDR = 3D2C94 0 16 SNM 0
 SI_SLOT = kPa 0.1 0 1 -100 500 -100 500
@@ -1049,8 +1049,8 @@ SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2201]
 Desc.001 = 16x16
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "VGT Position 1" "Turbo" "Position" 1 3 0 0
 ADDR = 328BC4 0 16 SNM 0
 SI_SLOT = % 0.0122071 0 1 -100 150 -100 150
@@ -1062,8 +1062,8 @@ SI_ROW = "Commanded Fuel mm3" "1,2,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2202]
 Desc.001 = 16x16
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "VGT Position 2" "Turbo" "Position" 1 3 0 0
 ADDR = 328F38 0 16 SNM 0
 SI_SLOT = % 0.0122071 0 1 -100 150 -100 150
@@ -1218,8 +1218,8 @@ SI_ROW = "Commanded Fuel mm3" "1,2,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
 ; ===============================================================================
 [B2167]
 DESC.001 = Used to enable or disable the Variable Geometry Turbo Controller in the ECM software. (experimental)
-Desc.001 = 
-Desc.001 = 
+Desc.002 = 
+Desc.003 = 
 VIEW = 2 "VGT Actuator Enable (experimental)" "Turbo" "Misc" 1 1 0 0
 ADDR = 3F5620 0 8 SED 0
 SI_SLOT = e/d 1 0 0 0 1 0 1
