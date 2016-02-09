@@ -1,16 +1,22 @@
 ; ============================
 ; CRUZE E47 EFI Live CAX
 ; ============================
+; The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
+; This CAX file comes with absolutely no warranty to the extent permitted by law.
+; ===============================================================================
 ;[OS]
 ; VIN  (17 ASCII bytes)
 ;PCM_VIN = 3FE000
-; =============
+; ===============================================================================
 [B0000]
 DESC.001 = If you are reading this, then the .cax file succesfully loaded (hurray!). It's possible that in the future EFI Live may add support which will cause conflicts.
-DESC.002 = CAX BY snipesy
-Desc.003 = This CAX is made for the 2014 North American Diesel Cruze, however it will work for 2015s as well.
+DESC.002 = This CAX is made for the 2014 North American Diesel Cruze, and will work for 2015s as well using the 12662377 Operating System. For further references and the latest .cax file, visit https://github.com/Snipesy/Cruze
+Desc.003 = CAX BY snipesy
 Desc.004 = Version 1 - Initial/Beta
-Desc.005 = This CAX file comes with absolutely no warranty to the extent permitteed by law. Now that's a pretty moot point. Legally I have to say nothing, but if/when something goes wrong all I can really do for you is a short "sorry". By using EFI Live you should have an understanding of the risks assoisated with this business.
+Desc.005 = 
+Desc.006 = ---Disclaimer---
+Desc.007 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
+Desc.008 = This CAX file comes with absolutely no warranty to the extent permitted by law.
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
 SI_SLOT = N/A 1 0 0 65535 65535 65535 65535
@@ -23,7 +29,7 @@ SI_COL = .
 [B0001]
 DESC.001 = Stored VIN in the ECM
 DESC.002 = I tried to get EFI to see the VIN directly, but it wouldn't read it. So I included it as a seperate table.
-DESC.003 = You should be using CALIBRATION only flashes. Do not full flash unless absolutely necessary. The CAX will convert the VIN to ASCII for you.
+DESC.003 = Only use CALIBRATION only flashes. Do not full flash unless absolutely necessary. The CAX will convert the VIN to ASCII for you.
 VIEW = 7 "VIN" "ECM Properties" "" 1 2 0 0
 ADDR = 3FE000 0 8 SED 0
 SI_SLOT = ASCII 1 0 0 0 256 0 256
