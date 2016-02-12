@@ -16,16 +16,6 @@
 ; B8XXX = Spedometer
 ; B2XXX = Boost Related
 ; 
-; ===============================================================================
-; History:
-; Version 1: Initial
-;
-;
-;
-;
-;
-;
-
 ; Any other ranges do not cohere to any specific area. 
 ;
 [B0000]
