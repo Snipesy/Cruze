@@ -16,6 +16,16 @@
 ; B8XXX = Spedometer
 ; B2XXX = Boost Related
 ; 
+; ===============================================================================
+; History:
+; Version 1: Initial
+;
+;
+;
+;
+;
+;
+
 ; Any other ranges do not cohere to any specific area. 
 ;
 [B0000]
@@ -28,7 +38,11 @@ Desc.006 = ---Disclaimer---
 Desc.007 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
 Desc.008 = This CAX file comes with absolutely no warranty to the extent permitted by law.
 Desc.009 =
-Desc.010 - There are many tables which will be marked UNKNOWN. They are included because their exact function may be important (and revealed) later on. Use them at your own risk.
+Desc.010 = There are many tables which will be marked UNKNOWN. They are included because their exact function may be important (and revealed) later on. Use them at your own risk.
+Desc.011 = ---- Record ----
+Desc.012 = Version 1: Initial
+Desc.013 = Version 2: Added Fuel Pressure Base 1-10; DEF Low Speed Limiters; Speed Limiter Fuel Reduction; Maximum VGT Actuator Duty Cycle; Torque Limit vs RPM; Pilot Injection; EGR Desired Position to Duty Cycle; various clean up and clarifications.
+Desc.014 = Version 3: Comming Soon
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
 SI_SLOT = N/A 1 0 0 65535 65535 65535 65535
