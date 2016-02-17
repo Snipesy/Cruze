@@ -469,7 +469,7 @@ SI_COL = "Fuel Pressure MPa" "30,40,60,80,100,160"
 SI_ROW = "Commanded Fuel mm3" "1,3,5,8,30,80"
 ; ===============================================================================
 [B6001]
-DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+DESC.001 = 
 Desc.002 = 
 Desc.003 = 
 VIEW = 2 "Main Injection Mode Assignment" "Injection Control" "" 1 2 0 0
@@ -1841,7 +1841,7 @@ SI_ROW = .
 ; ===============================================================================
 ; ===============================================================================
 [EXP6020]
-DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+DESC.001 = 
 Desc.002 = 
 Desc.003 = 
 VIEW = 2 "Mode Assignment 1" "Experimental" "Mode Assignments" 1 2 0 0
@@ -1854,7 +1854,7 @@ SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [EXP6021]
-DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+DESC.001 = 
 Desc.002 = 
 Desc.003 = 
 VIEW = 2 "Mode Assignment 2" "Experimental" "Mode Assignments" 1 2 0 0
@@ -1867,7 +1867,7 @@ SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [EXP6022]
-DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+DESC.001 = 
 Desc.002 = 
 Desc.003 = 
 VIEW = 2 "Mode Assignment 3" "Experimental" "Mode Assignments" 1 2 0 0
@@ -1880,7 +1880,7 @@ SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [EXP6023]
-DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+DESC.001 = 
 Desc.002 = 
 Desc.003 = 
 VIEW = 2 "Mode Assignment 4" "Experimental" "Mode Assignments" 1 2 0 0
@@ -1893,7 +1893,7 @@ SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [EXP6024]
-DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+DESC.001 = 
 Desc.002 = 
 Desc.003 = 
 VIEW = 2 "Mode Assignment 5" "Experimental" "Mode Assignments" 1 2 0 0
@@ -1906,7 +1906,7 @@ SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [EXP6025]
-DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+DESC.001 = 
 Desc.002 = 
 Desc.003 = 
 VIEW = 2 "Mode Assignment 6" "Experimental" "Mode Assignments" 1 2 0 0
@@ -1919,7 +1919,7 @@ SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 [EXP6026]
-DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+DESC.001 = 
 Desc.002 = 
 Desc.003 = 
 VIEW = 2 "Mode Assignment 7" "Experimental" "Mode Assignments" 1 2 0 0
