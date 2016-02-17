@@ -7,9 +7,6 @@
 ; This file goes into %programfiles(x86)%\EFILive\V7.5\Calibrations for 64 bit systems
 ; or %programfiles%\EFILive\V7.5\Calibrations for 32 bit systems.
 ; ===============================================================================
-;[OS]
-; VIN  (17 ASCII bytes)
-;PCM_VIN = 3FE000
 ; ===============================================================================
 ; General Guidelines
 ; B9XXX = DTC Tables
@@ -22,7 +19,7 @@
 DESC.001 = If you are reading this, then the .cax file succesfully loaded (hurray!). It's possible that in the future EFI Live may add support which will cause conflicts.
 DESC.002 = This CAX is made for the 2014 North American Diesel Cruze, and will work for 2015s as well using the 12662377 Operating System. For further references and the latest .cax file, visit https://github.com/Snipesy/Cruze
 Desc.003 = CAX BY snipesy
-Desc.004 = Version 1 - Initial/Beta
+Desc.004 = Version 2.1
 Desc.005 = 
 Desc.006 = ---Disclaimer---
 Desc.007 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
@@ -31,8 +28,8 @@ Desc.009 =
 Desc.010 = There are many tables which will be marked UNKNOWN. They are included because their exact function may be important (and revealed) later on. Use them at your own risk.
 Desc.011 = ---- Record ----
 Desc.012 = Version 1: Initial
-Desc.013 = Version 2: Added Fuel Pressure Base 1-10; DEF Low Speed Limiters; Speed Limiter Fuel Reduction; Maximum VGT Actuator Duty Cycle; Torque Limit vs RPM; Pilot Injection; EGR Desired Position to Duty Cycle; various clean up and clarifications.
-Desc.014 = Version 3: Comming Soon
+Desc.013 = Version 2: Added Fuel Pressure Base 1-10; DEF Low Speed Limiters; Speed Limiter Fuel Reduction; Maximum VGT Actuator Duty Cycle; Torque Limit vs RPM; Pilot Injection; EGR Desired Position to Duty Cycle; various clean up and fixes. Experimental section.
+Desc.014 = Version 3: Comming Soon()
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
 SI_SLOT = N/A 1 0 0 65535 65535 65535 65535
@@ -147,6 +144,19 @@ SI_COL = RPM "600,850,1000,1250,1500,1750,2000,2500,2800,3600,3750,4000,4100,430
 SI_ROW = "Throttle Position %" "0,5,10,15,20,25,30,35,40,50,60,70,80,90,95,100"
 ; ===============================================================================
 [B0013]
+DESC.001 = Desired torque (used for fuel conversion) during cranking.
+Desc.002 = 
+DESC.003 = 
+VIEW = 2 "Cranking Torque Requirement" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3F3B70 0 16 SNM 0
+SI_SLOT = Nm 0.1 0 1 -1000 1000 -1000 1000
+ULABELS = .              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "0,200,400,500,600,650,700,800,1100,1250"
+SI_ROW = "ECT Deg C" "-40,-30,-20,-10,0,10,20,40,60,90,101,105"
+; ===============================================================================
+[B0014]
 DESC.001 = Referenced to RPM and Actual Torque percentage, if the Actual Torque and Predicted Torque are different by this amount the ECM will set a P0606.
 Desc.002 = 
 Desc.003 = 
@@ -159,7 +169,7 @@ IM_ENUM = .
 SI_COL = "Torque %" "0,10,20,30,40,50,60,70"
 SI_ROW = RPM "720,1200,1240,1520,2000,3000,4000,6000"
 ; ===============================================================================
-[B0014]
+[B0015]
 DESC.001 = Referenced to RPM and Pedal Position, this table defines the expected maximum torque percentage
 DESC.002 = the engine will be operating in.
 Desc.003 = 
@@ -172,7 +182,7 @@ IM_ENUM = .
 SI_COL = RPM "600,920,1240,1480,1800,2520,3640,4000,4280,5000,5120"
 SI_ROW = "Throttle Position %" "0,16,26,30,38,50,60,70,83,100"
 ; ===============================================================================
-[B0015]
+[B0016]
 DESC.001 = For a given Injection 'on time' in uS and Fuel Rail Pressure, this table represents what would be the commanded mm3 amount. The values from this table are used for Torque calculations, not actual fuelling.
 Desc.002 = 
 Desc.003 = 
@@ -438,7 +448,7 @@ DESC.002 = The ECM selects the value from this table based on fuel delivery per 
 Desc.003 = 
 VIEW = 2 "Injection Pulses" "Injection Quanity" "" 1 3 0 0
 ADDR = 3CD1F4 0 16 SNM 0
-SI_SLOT = mircroseconds 1 0 1 0 14000 0 14000
+SI_SLOT = mircroseconds .4 0 1 0 14000 0 14000
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -451,7 +461,7 @@ Desc.002 =
 Desc.003 = 
 VIEW = 2 "Injection Min Seperation Time" "Injection Quanity" "" 1 3 0 0
 ADDR = 3CD564 0 16 SNM 0
-SI_SLOT = mircroseconds 1 0 1 0 14000 0 14000
+SI_SLOT = mircroseconds .4 0 1 0 14000 0 14000
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -1783,6 +1793,152 @@ SI_ROW = "RPM" "0,500,1000,1500,2000,2500,3000,3400"
 ; ===============================================================================
 ; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
 ; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!! SUPER EXPERIMENTAL !!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+[EXP2190]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "DPF 1" "Experimental" "Switches" 1 1 0 0
+ADDR = 3D9A8A 0 8 UNM 0
+SI_SLOT = e/d 1 0 0 0 255 0 255
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
+[EXP2191]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "DPF 2" "Experimental" "Switches" 1 1 0 0
+ADDR = 3D9A8B 0 8 SED 0
+SI_SLOT = e/d 1 0 0 0 1 0 1
+ULABELS = .	              .              .
+SI_ENUM = "1=Enable,0=Disable"
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
+[EXP2192]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "DPF 3" "Experimental" "Switches" 1 1 0 0
+ADDR = 3D9A8C 0 8 SED 0
+SI_SLOT = e/d 1 0 0 0 1 0 1
+ULABELS = .	              .              .
+SI_ENUM = "1=Enable,0=Disable"
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
+; ===============================================================================
+[EXP6020]
+DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Mode Assignment 1" "Experimental" "Mode Assignments" 1 2 0 0
+ADDR = "38CCF7,38CCFC,38CD01,38CD06,38CD0B,38CD10" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[EXP6021]
+DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Mode Assignment 2" "Experimental" "Mode Assignments" 1 2 0 0
+ADDR = "38CDA9,38CDAE,38CDB3,38CDB8,38CDBD,38CDC2" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[EXP6022]
+DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Mode Assignment 3" "Experimental" "Mode Assignments" 1 2 0 0
+ADDR = "38CE16,38CE1B,38CE20,38CE25,38CE2A,38CE2F" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[EXP6023]
+DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Mode Assignment 4" "Experimental" "Mode Assignments" 1 2 0 0
+ADDR = "38E6ED,38E6F2,38E6F7,38E6FC,38E701,38E706" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[EXP6024]
+DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Mode Assignment 5" "Experimental" "Mode Assignments" 1 2 0 0
+ADDR = "38ED7D,38ED82,38ED87,38ED8C,38ED91,38ED96" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[EXP6025]
+DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Mode Assignment 6" "Experimental" "Mode Assignments" 1 2 0 0
+ADDR = "38EE2D,38EE32,38EE37,38EE3C,38EE41,38EE46" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+[EXP6026]
+DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Mode Assignment 7" "Experimental" "Mode Assignments" 1 2 0 0
+ADDR = "38EE9A,38EE9F,38EEA4,38EEA9,38EEAE,38EEB3" 0 8 SED 0
+SI_SLOT = Mode 1 0 0 0 5 0 5
+ULABELS = .	              .              .
+SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
+SI_COL = "Number" "0,1,2,3,4,5"
+SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
+; ===============================================================================
+; 
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
 ; ============!!!!!!!!!!!!!!!!! SPEEDOMETER AREA !!!!!!!!!!!!!!!!================
 ; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
 ; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
@@ -1825,6 +1981,7 @@ Desc.003 =
 VIEW = 8 "DEF Low, Speed Limit 4" "Speed Limiting" "" 1 1 0 0
 ADDR = 3ED86C 0 16 UNM 0
 SI_SLOT = KMH .01 0 1 0 327 0 327
+; ===============================================================================
 ; ===============================================================================
 [B8200]
 DESC.001 = This table defines the amount of fuel the ECM will start pulling or adding based on what the actual vehicle speed is in relation to what the speed limiter is set to.
