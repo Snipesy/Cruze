@@ -7,9 +7,6 @@
 ; This file goes into %programfiles(x86)%\EFILive\V7.5\Calibrations for 64 bit systems
 ; or %programfiles%\EFILive\V7.5\Calibrations for 32 bit systems.
 ; ===============================================================================
-;[OS]
-; VIN  (17 ASCII bytes)
-;PCM_VIN = 3FE000
 ; ===============================================================================
 ; General Guidelines
 ; B9XXX = DTC Tables
@@ -32,7 +29,7 @@ Desc.010 = There are many tables which will be marked UNKNOWN. They are included
 Desc.011 = ---- Record ----
 Desc.012 = Version 1: Initial
 Desc.013 = Version 2: Added Fuel Pressure Base 1-10; DEF Low Speed Limiters; Speed Limiter Fuel Reduction; Maximum VGT Actuator Duty Cycle; Torque Limit vs RPM; Pilot Injection; EGR Desired Position to Duty Cycle; various clean up and clarifications.
-Desc.014 = Version 3: Comming Soon
+Desc.014 = Version 3: Comming Soon {OS}
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
 SI_SLOT = N/A 1 0 0 65535 65535 65535 65535
@@ -451,7 +448,7 @@ DESC.002 = The ECM selects the value from this table based on fuel delivery per 
 Desc.003 = 
 VIEW = 2 "Injection Pulses" "Injection Quanity" "" 1 3 0 0
 ADDR = 3CD1F4 0 16 SNM 0
-SI_SLOT = mircroseconds 1 0 1 0 14000 0 14000
+SI_SLOT = mircroseconds .4 0 1 0 14000 0 14000
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -464,7 +461,7 @@ Desc.002 =
 Desc.003 = 
 VIEW = 2 "Injection Min Seperation Time" "Injection Quanity" "" 1 3 0 0
 ADDR = 3CD564 0 16 SNM 0
-SI_SLOT = mircroseconds 1 0 1 0 14000 0 14000
+SI_SLOT = mircroseconds .4 0 1 0 14000 0 14000
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -1803,7 +1800,7 @@ SI_ROW = "RPM" "0,500,1000,1500,2000,2500,3000,3400"
 ; ===============================================================================
 ; ===============================================================================
 ; ===============================================================================
-[B2190]
+[EXP2190]
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
@@ -1816,7 +1813,7 @@ IM_ENUM = .
 SI_COL = .
 SI_ROW = .
 ; ===============================================================================
-[B2191]
+[EXP2191]
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
@@ -1829,7 +1826,7 @@ IM_ENUM = .
 SI_COL = .
 SI_ROW = .
 ; ===============================================================================
-[B2192]
+[EXP2192]
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
@@ -1843,7 +1840,7 @@ SI_COL = .
 SI_ROW = .
 ; ===============================================================================
 ; ===============================================================================
-[B6020]
+[EXP6020]
 DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
 Desc.002 = 
 Desc.003 = 
@@ -1856,7 +1853,7 @@ IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
 SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
-[B6021]
+[EXP6021]
 DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
 Desc.002 = 
 Desc.003 = 
@@ -1869,7 +1866,7 @@ IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
 SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
-[B6022]
+[EXP6022]
 DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
 Desc.002 = 
 Desc.003 = 
@@ -1882,7 +1879,7 @@ IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
 SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
-[B6023]
+[EXP6023]
 DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
 Desc.002 = 
 Desc.003 = 
@@ -1895,7 +1892,7 @@ IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
 SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
-[B6024]
+[EXP6024]
 DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
 Desc.002 = 
 Desc.003 = 
@@ -1908,7 +1905,7 @@ IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
 SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
-[B6025]
+[EXP6025]
 DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
 Desc.002 = 
 Desc.003 = 
@@ -1921,7 +1918,7 @@ IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
 SI_COL = "Number" "0,1,2,3,4,5"
 SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
-[B6026]
+[EXP6026]
 DESC.001 = These tables are based on the LML. They are likely arranged the similiarry, and that is how these tables were made. However, they are still very different and these are unconfirmed. I have no clue what the x axis (number) really does. Apparently no one does.
 Desc.002 = 
 Desc.003 = 
