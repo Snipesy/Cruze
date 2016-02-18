@@ -156,6 +156,150 @@ IM_ENUM = .
 SI_COL = RPM "0,200,400,500,600,650,700,800,1100,1250"
 SI_ROW = "ECT Deg C" "-40,-30,-20,-10,0,10,20,40,60,90,101,105"
 ; ===============================================================================
+; ===============================================================================
+[B0104]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, High Altitude, Mode 0" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E018A 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0105]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, High Altitude, Mode 1" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E04FE 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0106]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, Mid Altitude, Mode 0" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E0BE6 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0107]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, Mid Altitude, Mode 1" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E0F5A 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0151]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, Mid Altitude, Transient" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E1650 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4501,4501,4502,4502"
+SI_ROW = "Torque Nm" "0,5,25,50,75,100,125,150,175,200,250,300,350,400,450,500,500,500,500,500"
+; ===============================================================================
+[B0108]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, Low Altitude, Mode 0" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E1A86 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0109]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, Low Altitude, Mode 1" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E1DFA 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0152]
+DESC.001 = Conversion of desired Torque to Fuel Quantity.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, Low Altitude, Transient" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3E24F0 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,4501,4501,4502,4502"
+SI_ROW = "Torque Nm" "0,5,25,50,75,100,125,150,175,200,250,300,350,400,450,500,500,500,500,500"
+; ===============================================================================
+[B0101]
+DESC.001 = This table is likely redundant and not used for actaul fueling.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, Other, A" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 35199A 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0102]
+DESC.001 = This table is likely redundant and not used for actaul fueling.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, Other, B" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 351D36 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
+[B0103]
+DESC.001 = This table is likely redundant and not used for actaul fueling.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Torque to Fuel, Other, C" "Injection Quanity" "Torque Reference" 1 3 0 0
+ADDR = 3520D2 0 16 SNM 0
+SI_SLOT = mm3 0.01 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
+SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
+; ===============================================================================
 [B0014]
 DESC.001 = Referenced to RPM and Actual Torque percentage, if the Actual Torque and Predicted Torque are different by this amount the ECM will set a P0606.
 Desc.002 = 
@@ -234,123 +378,6 @@ IM_ENUM = .
 SI_COL = "RPM" "800,1000,1240,1480,1760,2000,2240,2480,2760,3000,3240,3480,3760,4000,4240,4520,4560,4600"
 SI_ROW = "Commanded Fuel mm3" "0,5,9,13,17,23,28,33,36,42,46,50,55,60,64,68,73,78,83,86,90,94,100"
 ; ===============================================================================
-[B0101]
-DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Torque to Fuel 1" "Injection Quanity" "Torque Reference" 1 3 0 0
-ADDR = 35199A 0 16 SNM 0
-SI_SLOT = Nm 0.01 0 1 0 200 0 200
-ULABELS = .	              .              .
-SI_ENUM = .
-IM_ENUM = .
-SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
-SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
-; ===============================================================================
-[B0102]
-DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Torque to Fuel 2" "Injection Quanity" "Torque Reference" 1 3 0 0
-ADDR = 351D36 0 16 SNM 0
-SI_SLOT = Nm 0.01 0 1 0 200 0 200
-ULABELS = .	              .              .
-SI_ENUM = .
-IM_ENUM = .
-SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
-SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
-; ===============================================================================
-[B0103]
-DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Torque to Fuel 3" "Injection Quanity" "Torque Reference" 1 3 0 0
-ADDR = 3520D2 0 16 SNM 0
-SI_SLOT = Nm 0.01 0 1 0 200 0 200
-ULABELS = .	              .              .
-SI_ENUM = .
-IM_ENUM = .
-SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
-SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
-; ===============================================================================
-[B0104]
-DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Torque to Fuel 4" "Injection Quanity" "Torque Reference" 1 3 0 0
-ADDR = 3E018A 0 16 SNM 0
-SI_SLOT = Nm 0.01 0 1 0 200 0 200
-ULABELS = .	              .              .
-SI_ENUM = .
-IM_ENUM = .
-SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
-SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
-; ===============================================================================
-[B0105]
-DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Torque to Fuel 5" "Injection Quanity" "Torque Reference" 1 3 0 0
-ADDR = 3E04FE 0 16 SNM 0
-SI_SLOT = Nm 0.01 0 1 0 200 0 200
-ULABELS = .	              .              .
-SI_ENUM = .
-IM_ENUM = .
-SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
-SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
-; ===============================================================================
-[B0106]
-DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Torque to Fuel 6" "Injection Quanity" "Torque Reference" 1 3 0 0
-ADDR = 3E0BE6 0 16 SNM 0
-SI_SLOT = Nm 0.01 0 1 0 200 0 200
-ULABELS = .	              .              .
-SI_ENUM = .
-IM_ENUM = .
-SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
-SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
-; ===============================================================================
-[B0107]
-DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Torque to Fuel 7" "Injection Quanity" "Torque Reference" 1 3 0 0
-ADDR = 3E0F5A 0 16 SNM 0
-SI_SLOT = Nm 0.01 0 1 0 200 0 200
-ULABELS = .	              .              .
-SI_ENUM = .
-IM_ENUM = .
-SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
-SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
-; ===============================================================================
-[B0108]
-DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Torque to Fuel 8" "Injection Quanity" "Torque Reference" 1 3 0 0
-ADDR = 3E1A86 0 16 SNM 0
-SI_SLOT = Nm 0.01 0 1 0 200 0 200
-ULABELS = .	              .              .
-SI_ENUM = .
-IM_ENUM = .
-SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
-SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
-; ===============================================================================
-[B0109]
-DESC.001 = Conversion of desired Torque to Fuel Quantity.
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Torque to Fuel 9" "Injection Quanity" "Torque Reference" 1 3 0 0
-ADDR = 3E1DFA 0 16 SNM 0
-SI_SLOT = Nm 0.01 0 1 0 200 0 200
-ULABELS = .	              .              .
-SI_ENUM = .
-IM_ENUM = .
-SI_COL = "RPM" "800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500"
-SI_ROW = "Torque Nm" "0.00,10.00,25.00,50.00,75.00,100.00,125.00,150.00,178.00,200.00,225.00,250.00,275.00,300.00,350.00,400.00,450.00"
-; ===============================================================================
 [B0301]
 DESC.001 = This is the first Map that defines the maximum commanded fuel based on engine RPM and the fuel reduction factor.The result from this map is then compared to that in {B0302} "Maximum Fuel Quantity Before Reduction 2" and the lowest value of the two is used against the Fuel Reduction Factor tables.
 Desc.002 = 
@@ -396,7 +423,7 @@ Desc.002 =
 Desc.003 = 
 VIEW = 2 "Intake Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3A7814 0 16 SNM 0
-SI_SLOT = Factor 0.000122 0 3 0 2 0 2
+SI_SLOT = Factor 0.0001220703125 0 3 0 2 0 2
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -409,7 +436,7 @@ Desc.002 =
 Desc.003 = 
 VIEW = 2 "Coolant Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3A7474 0 16 SNM 0
-SI_SLOT = Factor 0.000122 0 3 0 2 0 2
+SI_SLOT = Factor 0.0001220703125 0 3 0 2 0 2
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -422,7 +449,7 @@ Desc.002 =
 Desc.003 = 
 VIEW = 2 "Unknown Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3A7690 0 16 SNM 0
-SI_SLOT = Factor 0.000122 0 3 0 2 0 2
+SI_SLOT = Factor 0.0001220703125 0 3 0 2 0 2
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
