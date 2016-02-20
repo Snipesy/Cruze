@@ -19,7 +19,7 @@
 DESC.001 = If you are reading this, then the .cax file succesfully loaded (hurray!). It's possible that in the future EFI Live may add support which will cause conflicts.
 DESC.002 = This CAX is made for the 2014 North American Diesel Cruze, and will work for 2015s as well using the 12662377 Operating System. For further references and the latest .cax file, visit https://github.com/Snipesy/Cruze
 Desc.003 = CAX BY snipesy
-Desc.004 = Version 2.1
+Desc.004 = Version 3.0 (2/19/16)
 Desc.005 = 
 Desc.006 = ---Disclaimer---
 Desc.007 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
@@ -29,7 +29,7 @@ Desc.010 = There are many tables which will be marked UNKNOWN. They are included
 Desc.011 = ---- Record ----
 Desc.012 = Version 1: Initial
 Desc.013 = Version 2: Added Fuel Pressure Base 1-10; DEF Low Speed Limiters; Speed Limiter Fuel Reduction; Maximum VGT Actuator Duty Cycle; Torque Limit vs RPM; Pilot Injection; EGR Desired Position to Duty Cycle; various clean up and fixes. Experimental section.
-Desc.014 = Version 3: Comming Soon()
+Desc.014 = Version 3: EGR Base Flow, more Fuel Pressure maps, refined fuel limiters.
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
 SI_SLOT = N/A 1 0 0 65535 65535 65535 65535
@@ -306,7 +306,7 @@ Desc.002 =
 Desc.003 = 
 VIEW = 2 "Predicted Engine Torque Percentage Allowed Difference" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 30075C 0 8 UNM 0
-SI_SLOT = % 0.3915 0 2 0 100 0 100
+SI_SLOT = % 0.392156862745098 0 2 0 100 0 100
 ULABELS = .              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -319,7 +319,7 @@ DESC.002 = the engine will be operating in.
 Desc.003 = 
 VIEW = 2 "Predicted Engine Torque Percentage" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 3007EA 0 8 UNM 0
-SI_SLOT = % 0.3915 0 2 0 100 0 100
+SI_SLOT = % 0.392156862745098 0 2 0 100 0 100
 ULABELS = .              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -337,7 +337,7 @@ ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
 SI_COL = "Fuel Pressure MPa" "0.00,25.00,38.00,50.00,62.00,75.00,88.00,100.00,112.00,125.00,137.00,150.00,163.00,175.00,188.00,225.00"
-SI_ROW = "Injection Time Microseconds" "0.00,245.00,458.00,602.00,727.00,1207.00,1442.00,1567.00,1808.00,1931.00,2407.00,3025.00,3230.00,3448.00,3685.00,3970.00,4315.00,4715.00,5000.00,5663.00,6190.00,6738.00,7298.00,7858.00,8420.00"
+SI_ROW = "Injection Time Microseconds" "0.00,98.00,183.20,240.80,290.80,482.80,576.80,626.80,723.20,772.40,962.80,1210.00,1292.00,1379.20,1474.00,1588.00,1726.00,1886.00,2000.00,2265.20,2476.00,2695.20,2919.20,3143.20,3368.00"
 ; ===============================================================================
 [B0502]
 DESC.001 = Maximum time any injection event can be commanded.
@@ -358,7 +358,7 @@ Desc.002 =
 Desc.003 = 
 VIEW = 2 "Maximum Expected Engine Load Transient" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 301EE8 0 16 SNM 0
-SI_SLOT = % 0.3915 0 1 0 100 0 100
+SI_SLOT = % 0.392156862745098 0 1 0 100 0 100
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -371,7 +371,7 @@ Desc.002 =
 Desc.003 = 
 VIEW = 2 "Maximum Expected Engine Load Normal" "Injection Quanity" "Torque Reference" 1 3 0 0
 ADDR = 30225E 0 16 SNM 0
-SI_SLOT = % 0.3915 0 1 0 100 0 100
+SI_SLOT = % 0.392156862745098 0 1 0 100 0 100
 ULABELS = .	              .              .
 SI_ENUM = .
 IM_ENUM = .
@@ -444,10 +444,10 @@ SI_COL = "Deg/C" "-20,-10,0,10,20,30,40,100,108,110,112,114,116,121,130,140"
 SI_ROW = "Baro kPa" "55,60,65,70,75,80,85,90,95,100"
 ; ===============================================================================
 [B0306]
-DESC.001 = Unknown temperature factor used against the Max Commanded mm3 
+DESC.001 = Fuel temperature factor used against the Max Commanded mm3 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "Unknown Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+VIEW = 2 "Fuel Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
 ADDR = 3A7690 0 16 SNM 0
 SI_SLOT = Factor 0.0001220703125 0 3 0 2 0 2
 ULABELS = .	              .              .
@@ -455,6 +455,45 @@ SI_ENUM = .
 IM_ENUM = .
 SI_COL = "Deg/C" "-40,-30,-20,-10,0,10,20,30,40,50,60,70,80,90,100,110"
 SI_ROW = "Baro kPa" "55,60,65,70,75,80,85,90,95,100"
+; ===============================================================================
+[B0307]
+DESC.001 = DPF Pressure Differential factor used against the Max Commanded mm3 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "DPF Pressure Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+ADDR = 3A7A70 0 16 SNM 0
+SI_SLOT = Factor 0.0001220703125 0 3 0 2 0 2
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "DPF Pressure kPa" "60,80,100,125,150,175,200,225,250,275,300,325,350,400,450,500"
+SI_ROW = "Baro kPa" "55,60,65,70,75,80,85,90,95,100"
+; ===============================================================================
+[B0308]
+DESC.001 = Exhaust temp reduction factor used against the Max Commanded mm3 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Exhaust Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+ADDR = 3A75D8 0 16 SNM 0
+SI_SLOT = Factor 0.0001220703125 0 3 0 2 0 2
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "EGT" "-40,100,200,300,400,500,600,700"
+SI_ROW = "RPM" "0,1000,1500,2000,2500,3000,4000,5000"
+; ===============================================================================
+[B0309]
+DESC.001 = EGR temperature factor used against the Max Commanded mm3 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "EGR Temp Fuel Reduction Factor" "Injection Quanity" "Fuel Limiters" 1 3 0 0
+ADDR = 342E10 0 16 SNM 0
+SI_SLOT = Factor 0.0001220703125 0 3 0 2 0 2
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "EGR deg/C" "100,200,300,400,500,600,700,800"
+SI_ROW = "RPM" "0,1000,1500,2000,2500,3000,4000,5000"
 ; ===============================================================================
 [B0351]
 Desc.001 =  
@@ -1319,7 +1358,7 @@ SI_ENUM = .
 IM_ENUM = .
 SI_COL = RPM "800,900,1000,1100,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4500,4750,5000"
 SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,25,30,35,40,45,50,55,60,70,80,90"
-; ===============================================================================
+; ==============================================================================
 [B2003]
 DESC.001 = 16x16
 Desc.002 = 
@@ -1879,6 +1918,110 @@ IM_ENUM = .
 SI_COL = .
 SI_ROW = "mm3 per second" "-400,-350,0,2300,6390,25190,29170,32050,32780,33080"
 ; ===============================================================================
+[B6150]
+DESC.001 =
+DESC.002 = 
+DESC.003 = 
+VIEW = 2 "EGR Base Flow, High Altitude, Mode 0" "EGR" "" 1 3 0 0
+ADDR = 386DE2 0 16 SNM 0
+SI_SLOT = Milligrams 0.1 0 1 0 2000 0 2000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "600,800,900,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,4000,4500,5000"
+SI_ROW = "Commanded Fuel mm3" "0,3,5,8,10,13,15,18,20,23,25,30,35,40,45,50,60,70,80,90"
+; ===============================================================================
+[B6151]
+DESC.001 =
+DESC.002 = 
+DESC.003 = 
+VIEW = 2 "EGR Base Flow, High Altitude, Mode 1" "EGR" "" 1 3 0 0
+ADDR = 387158 0 16 SNM 0
+SI_SLOT = Milligrams 0.1 0 1 0 2000 0 2000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,5000"
+SI_ROW = "Commanded Fuel mm3" "0,3,5,8,10,13,15,18,20,23,25,30,35,40,50,55,60,70,80,90"
+; ===============================================================================
+[B6152]
+DESC.001 =
+DESC.002 = 
+DESC.003 = 
+VIEW = 2 "EGR Base Flow, Mid Altitude, Transient" "EGR" "" 1 3 0 0
+ADDR = 387882 0 16 SNM 0
+SI_SLOT = Milligrams 0.1 0 1 0 2000 0 2000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "600,800,900,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4100"
+SI_ROW = "Commanded Fuel mm3" "0,3,5,8,10,13,15,18,20,23,25,30,35,40,45,50,55,60,65,70,75,80,85,90"
+; ===============================================================================
+[B6153]
+DESC.001 =
+DESC.002 = 
+DESC.003 = 
+VIEW = 2 "EGR Base Flow, Mid Altitude, Mode 0" "EGR" "" 1 3 0 0
+ADDR = 387C96 0 16 SNM 0
+SI_SLOT = Milligrams 0.1 0 1 0 2000 0 2000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "600,800,900,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,4000,4500,5000"
+SI_ROW = "Commanded Fuel mm3" "0,3,5,8,10,13,15,18,20,23,25,30,35,40,45,50,60,70,80,90"
+; ===============================================================================
+[B6154]
+DESC.001 =
+DESC.002 = 
+DESC.003 = 
+VIEW = 2 "EGR Base Flow, Mid Altitude, Mode 1" "EGR" "" 1 3 0 0
+ADDR = 38800C 0 16 SNM 0
+SI_SLOT = Milligrams 0.1 0 1 0 2000 0 2000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,5000"
+SI_ROW = "Commanded Fuel mm3" "0,3,5,8,10,13,15,18,20,23,25,30,35,40,50,55,60,70,80,90"
+; ===============================================================================
+[B6155]
+DESC.001 =
+DESC.002 = 
+DESC.003 = 
+VIEW = 2 "EGR Base Flow, Low Altitude, Transient" "EGR" "" 1 3 0 0
+ADDR = 388736 0 16 SNM 0
+SI_SLOT = Milligrams 0.1 0 1 0 2000 0 2000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "600,800,900,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4100"
+SI_ROW = "Commanded Fuel mm3" "0,3,5,8,10,13,15,18,20,23,25,30,35,40,45,50,55,60,65,70,75,80,85,90"
+; ===============================================================================
+[B6156]
+DESC.001 =
+DESC.002 = 
+DESC.003 = 
+VIEW = 2 "EGR Base Flow, Low Altitude, Mode 0" "EGR" "" 1 3 0 0
+ADDR = 388B4A 0 16 SNM 0
+SI_SLOT = Milligrams 0.1 0 1 0 2000 0 2000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "600,800,900,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,4000,4500,5000"
+SI_ROW = "Commanded Fuel mm3" "0,3,5,8,10,13,15,18,20,23,25,30,35,40,45,50,60,70,80,90"
+; ===============================================================================
+[B6157]
+DESC.001 =
+DESC.002 = 
+DESC.003 = 
+VIEW = 2 "EGR Base Flow, Low Altitude, Mode 1" "EGR" "" 1 3 0 0
+ADDR = 388EC0 0 16 SNM 0
+SI_SLOT = Milligrams 0.1 0 1 0 2000 0 2000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "RPM" "600,800,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000,4250,4500,5000"
+SI_ROW = "Commanded Fuel mm3" "0,3,5,8,10,13,15,18,20,23,25,30,35,40,50,55,60,70,80,90"
+; ===============================================================================
 [B6100]
 DESC.001 =
 DESC.002 = 
@@ -2092,7 +2235,7 @@ SI_SLOT = KMH .01 0 1 0 327 0 327
 DESC.001 = This table defines the amount of fuel the ECM will start pulling or adding based on what the actual vehicle speed is in relation to what the speed limiter is set to.
 DESC.002 = 
 DESC.003 = 
-VIEW = 8 "Speed Limiter Fuel Reduction, Normal" "Speed Limiting" "" 1 3 0 0
+VIEW = 8 "Speed Limiter Fuel Reduction, Normal A" "Speed Limiting" "" 1 3 0 0
 ADDR = 3CD752 0 16 SNM 0
 SI_SLOT = Number 0.01 0 1 -100 100 -100 100
 ULABELS = .	              .              .
@@ -2105,8 +2248,34 @@ SI_ROW = "Gear Ratio" "2.31,2.65,3.73,5.26"
 DESC.001 = This table defines the amount of fuel the ECM will start pulling or adding based on what the actual vehicle speed is in relation to what the speed limiter is set to.
 DESC.002 = 
 DESC.003 = 
-VIEW = 8 "Speed Limiter Fuel Reduction, Low" "Speed Limiting" "" 1 3 0 0
+VIEW = 8 "Speed Limiter Fuel Reduction, Normal B" "Speed Limiting" "" 1 3 0 0
 ADDR = 34DD52 0 16 SNM 0
+SI_SLOT = Number 0.01 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "Speed From Limiter KMH" "-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14"
+SI_ROW = "Gear Ratio" "2.31,2.65,3.73,5.26"
+; ===============================================================================
+[B8203]
+DESC.001 = This table defines the amount of fuel the ECM will start pulling or adding based on what the actual vehicle speed is in relation to what the speed limiter is set to.
+DESC.002 = 
+DESC.003 = 
+VIEW = 8 "Speed Limiter Fuel Reduction, Low A" "Speed Limiting" "" 1 3 0 0
+ADDR = 3CD7F6 0 16 SNM 0
+SI_SLOT = Number 0.01 0 1 -100 100 -100 100
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = "Speed From Limiter KMH" "-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14"
+SI_ROW = "Gear Ratio" "2.31,2.65,3.73,5.26"
+; ===============================================================================
+[B8204]
+DESC.001 = This table defines the amount of fuel the ECM will start pulling or adding based on what the actual vehicle speed is in relation to what the speed limiter is set to.
+DESC.002 = 
+DESC.003 = 
+VIEW = 8 "Speed Limiter Fuel Reduction, Low B" "Speed Limiting" "" 1 3 0 0
+ADDR = 34DDF6 0 16 SNM 0
 SI_SLOT = Number 0.01 0 1 -100 100 -100 100
 ULABELS = .	              .              .
 SI_ENUM = .
