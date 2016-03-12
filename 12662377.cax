@@ -1,11 +1,16 @@
 ; ============================
-; CRUZE E47 EFI Live CAX
+; CRUZE E47 CAX
+; Snipesy.com (C) 2016
 ; ============================
 ; The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
 ; This CAX file comes with absolutely no warranty to the extent permitted by law.
 ; ===============================================================================
 ; This file goes into %programfiles(x86)%\EFILive\V7.5\Calibrations for 64 bit systems
 ; or %programfiles%\EFILive\V7.5\Calibrations for 32 bit systems.
+; ===============================================================================
+; ===============================================================================
+; This cax made for the E47 ECM is licensed under a Creative Commons Attribution 4.0 International License.
+; Made by Justin Hoogestraat "Snipesy"
 ; ===============================================================================
 ; ===============================================================================
 ; General Guidelines
@@ -18,18 +23,18 @@
 [B0000]
 DESC.001 = If you are reading this, then the .cax file succesfully loaded (hurray!). It's possible that in the future EFI Live may add support which will cause conflicts.
 DESC.002 = This CAX is made for the 2014 North American Diesel Cruze, and will work for 2015s as well using the 12662377 Operating System. For further references and the latest .cax file, visit https://github.com/Snipesy/Cruze
-Desc.003 = CAX BY snipesy
-Desc.004 = Version 3.0 (2/19/16)
-Desc.005 = 
-Desc.006 = ---Disclaimer---
-Desc.007 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
-Desc.008 = This CAX file comes with absolutely no warranty to the extent permitted by law.
-Desc.009 =
-Desc.010 = There are many tables which will be marked UNKNOWN. They are included because their exact function may be important (and revealed) later on. Use them at your own risk.
-Desc.011 = ---- Record ----
-Desc.012 = Version 1: Initial
-Desc.013 = Version 2: Added Fuel Pressure Base 1-10; DEF Low Speed Limiters; Speed Limiter Fuel Reduction; Maximum VGT Actuator Duty Cycle; Torque Limit vs RPM; Pilot Injection; EGR Desired Position to Duty Cycle; various clean up and fixes. Experimental section.
-Desc.014 = Version 3: EGR Base Flow, more Fuel Pressure maps, refined fuel limiters.
+Desc.003 = 
+Desc.004 = This cax is licensed under a Creative Commons Attribution 4.0 International License.
+Desc.005 = See http://creativecommons.org/licenses/by/4.0/
+Desc.006 = Cax created by Justin Hoogestraat "Snipesy"
+Desc.007 = 
+Desc.008 = ---- DISCLAIMERS ----
+Desc.009 = This CAX file comes with absolutely no warranty to the extent permitted by law.
+Desc.010 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
+Desc.011 = At this time this cax is still very unfinished. Use at own risk.
+Desc.012 = 
+Desc.013 = Current Version: V4.0 (March)
+Desc.014 = 
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
 SI_SLOT = N/A 1 0 0 65535 65535 65535 65535
