@@ -33,7 +33,7 @@ Desc.009 = This CAX file comes with absolutely no warranty to the extent permitt
 Desc.010 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
 Desc.011 = At this time this cax is still very unfinished. Use at own risk.
 Desc.012 = 
-Desc.013 = Current Version: V4.0.1 (Mar 15)
+Desc.013 = Current Version: V4.0.2 (Mar 21)
 Desc.014 = 
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
@@ -2114,7 +2114,7 @@ SI_ROW = "Torque Nm" "0,50,75,100,125,150,200,250,300,350,400,500"
 ; ===============================================================================
 ; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
 ; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
-; ============!!!!!!!!!!!!!!!! SUPER EXPERIMENTAL !!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!! VEHICLE  OPTIONS !!!!!!!!!!!!!!!!================
 ; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
 ; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
 ; ===============================================================================
@@ -2160,6 +2160,46 @@ IM_ENUM = .
 SI_COL = .
 SI_ROW = .
 ; ===============================================================================
+[B2504]
+DESC.001 = 0 = No DPF Diagnostic monitoring
+Desc.002 = 
+Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
+VIEW = 2 "Diesel Particulate Filter Monitoring" "Vehicle Options" "" 1 1 0 0
+ADDR = 3D9A8A 0 8 UNM 0
+SI_SLOT = e/d 1 0 0 0 255 0 255
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
+[B2504]
+DESC.001 = 0 = No DPF Diagnostic monitoring
+Desc.002 = 
+Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
+VIEW = 2 "Diesel Particulate Filter Monitoring" "Vehicle Options" "" 1 1 0 0
+ADDR = 3D9A8A 0 8 UNM 0
+SI_SLOT = e/d 1 0 0 0 255 0 255
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!! EXPERIMETNAL !!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
 ; ===============================================================================
 [EXP2590]
 DESC.001 = 
@@ -2170,19 +2210,6 @@ ADDR = 3F4D47 0 8 SED 0
 SI_SLOT = e/d 1 0 0 0 1 0 1
 ULABELS = .	              .              .
 SI_ENUM = "1=Disable,0=Enable"
-IM_ENUM = .
-SI_COL = .
-SI_ROW = .
-; ===============================================================================
-[EXP2190]
-DESC.001 =
-Desc.002 = 
-Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
-VIEW = 2 "DPF 1" "Experimental" "Vehicle Options" 1 1 0 0
-ADDR = 3D9A8A 0 8 UNM 0
-SI_SLOT = e/d 1 0 0 0 255 0 255
-ULABELS = .	              .              .
-SI_ENUM = .
 IM_ENUM = .
 SI_COL = .
 SI_ROW = .
