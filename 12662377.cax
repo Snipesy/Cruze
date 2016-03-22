@@ -2173,19 +2173,6 @@ IM_ENUM = .
 SI_COL = .
 SI_ROW = .
 ; ===============================================================================
-[B2504]
-DESC.001 = 0 = No DPF Diagnostic monitoring
-Desc.002 = 
-Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
-VIEW = 2 "Diesel Particulate Filter Monitoring" "Vehicle Options" "" 1 1 0 0
-ADDR = 3D9A8A 0 8 UNM 0
-SI_SLOT = e/d 1 0 0 0 255 0 255
-ULABELS = .	              .              .
-SI_ENUM = .
-IM_ENUM = .
-SI_COL = .
-SI_ROW = .
-; ===============================================================================
 ; ===============================================================================
 ; ===============================================================================
 ; ===============================================================================
