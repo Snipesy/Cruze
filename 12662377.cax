@@ -33,7 +33,7 @@ Desc.009 = This CAX file comes with absolutely no warranty to the extent permitt
 Desc.010 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
 Desc.011 = At this time this cax is still very unfinished. Use at own risk.
 Desc.012 = 
-Desc.013 = Current Version: V4.0.2 (Mar 21)
+Desc.013 = Current Version: V4.1.0 (Mar 24)
 Desc.014 = 
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
@@ -2112,6 +2112,100 @@ SI_ROW = "Torque Nm" "0,50,75,100,125,150,200,250,300,350,400,500"
 ; ===============================================================================
 ; ===============================================================================
 ; ===============================================================================
+; ===============================================================================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!! Airflow      !!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+[B1943]
+Desc.001 = This table defines the multiplier (weighting) factor for High Altitude levels.
+Desc.002 = These multipliers are used by many tables in the ECM.
+Desc.003 = For example, at 4200 ft elevation, the baro PSI is 12.4 psi. If the values found on these tables are high (0.0), medium (0.80) and low (0.20), then the actual parameter will be an interpolation of the med and low target tables, adjusted with the respective weighting.
+VIEW = 2 "Altitude Multiplier, High Altitude" "Airflow" "Altitude Scaling" 1 2 0 0
+ADDR = 3A81D2 0 16 SNM 0
+SI_SLOT = factor 0.0001220703125 0 2 0 3 0 3
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = "kPa" "58.50,63.00,66.00,69.00,72.00,75.00,78.00,81.00"
+; ===============================================================================
+[B1944]
+Desc.001 = This table defines the multiplier (weighting) factor for High Altitude levels.
+Desc.002 = These multipliers are used by many tables in the ECM.
+Desc.003 = For example, at 4200 ft elevation, the baro PSI is 12.4 psi. If the values found on these tables are high (0.0), medium (0.80) and low (0.20), then the actual parameter will be an interpolation of the med and low target tables, adjusted with the respective weighting.
+VIEW = 2 "Altitude Multiplier, Mid Altitude" "Airflow" "Altitude Scaling" 1 2 0 0
+ADDR = 3A8204 0 16 SNM 0
+SI_SLOT = factor 0.0001220703125 0 2 0 3 0 3
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = "kPa" "58.50,63.00,66.00,69.00,72.00,75.00,78.00,81.00,84.00,86.00,88.00,90.00,92.00,94.00,96.00,98.00"
+; ===============================================================================
+[B1945]
+Desc.001 = This table defines the multiplier (weighting) factor for High Altitude levels.
+Desc.002 = These multipliers are used by many tables in the ECM.
+Desc.003 = For example, at 4200 ft elevation, the baro PSI is 12.4 psi. If the values found on these tables are high (0.0), medium (0.80) and low (0.20), then the actual parameter will be an interpolation of the med and low target tables, adjusted with the respective weighting.
+VIEW = 2 "Altitude Multiplier, Low Altitude" "Airflow" "Altitude Scaling" 1 2 0 0
+ADDR = 3A8236 0 16 SNM 0
+SI_SLOT = factor 0.0001220703125 0 2 0 3 0 3
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .=
+SI_COL = .
+SI_ROW = "kPa" "84.00,86.00,88.00,90.00,92.00,94.00,96.00,98.00"
+; ===============================================================================
+[B1960]
+DESC.001 = This is the atmospheric pressure value the ECM will use in the event of an error.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Fallback Pressure" "Airflow" "Environment Pressure Sensor" 1 1 0 0
+ADDR = 3A8252 0 16 SMN 0
+SI_SLOT = kPa .1 0 1 0 200 0 200
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
+[B1961]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Sensor Fitted" "Airflow" "Environment Pressure Sensor" 1 1 0 0
+ADDR = 3A8250 0 8 SMN 0
+SI_SLOT = value 1 0 1 0 2 0 2
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
+[B1962]
+DESC.001 = Determines whether the pressure is given by hardware or by CAN.
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Hardware or CAN" "Airflow" "Environment Pressure Sensor" 1 1 0 0
+ADDR = 3A81BE 0 8 SMN 0
+SI_SLOT = value .1 0 1 0 2 0 2
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+; ===============================================================================
 ; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
 ; ============!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================
 ; ============!!!!!!!!!!!!!!!!! VEHICLE  OPTIONS !!!!!!!!!!!!!!!!================
@@ -2173,6 +2267,19 @@ IM_ENUM = .
 SI_COL = .
 SI_ROW = .
 ; ===============================================================================
+[B2601]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Throttle Valve Controller Enable" "Vehicle Options" "" 1 1 0 0
+ADDR = 3F4D47 0 8 SED 0
+SI_SLOT = e/d 1 0 0 0 1 0 1
+ULABELS = .	              .              .
+SI_ENUM = "1=Disable,0=Enable"
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
 ; ===============================================================================
 ; ===============================================================================
 ; ===============================================================================
@@ -2187,19 +2294,6 @@ SI_ROW = .
 ; ===============================================================================
 ; ===============================================================================
 ; ===============================================================================
-; ===============================================================================
-[EXP2590]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Throttle Valve Controller Enable" "Experimental" "Vehicle Options" 1 1 0 0
-ADDR = 3F4D47 0 8 SED 0
-SI_SLOT = e/d 1 0 0 0 1 0 1
-ULABELS = .	              .              .
-SI_ENUM = "1=Disable,0=Enable"
-IM_ENUM = .
-SI_COL = .
-SI_ROW = .
 ; ===============================================================================
 [EXP2191]
 DESC.001 = 
@@ -2218,7 +2312,7 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
-VIEW = 2 "SCR Systems Fitted" "Experimental" "Vehicle Options" 1 1 0 0
+VIEW = 2 "SCR Systems Fitted" "Experimental" "TrashCan (wrong)" 1 1 0 0
 ADDR = 3ED56A 0 8 SED 0
 SI_SLOT = e/d 1 0 0 0 1 0 1
 ULABELS = .	              .              .
@@ -2231,7 +2325,7 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
-VIEW = 2 "SCR Injector Controller" "Experimental" "Vehicle Options" 1 1 0 0
+VIEW = 2 "SCR Injector Controller" "Experimental" "TrashCan (wrong)" 1 1 0 0
 ADDR = 3ED56B 0 8 SED 0
 SI_SLOT = e/d 1 0 0 0 1 0 1
 ULABELS = .	              .              .
@@ -2244,8 +2338,21 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
-VIEW = 2 "SCR Injector Fitted" "Experimental" "Vehicle Options" 1 1 0 0
+VIEW = 2 "SCR Injector Fitted" "Experimental" "TrashCan (wrong)" 1 1 0 0
 ADDR = 3ED56D 0 8 SED 0
+SI_SLOT = e/d 1 0 0 0 1 0 1
+ULABELS = .	              .              .
+SI_ENUM = "1=Disable,0=Enable"
+IM_ENUM = .
+SI_COL = .
+SI_ROW = .
+; ===============================================================================
+[EXP2250]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
+VIEW = 2 "EGR Valve Controller" "Experimental" "Vehicle Options" 1 1 0 0
+ADDR = 3A1EF6 0 8 SED 0
 SI_SLOT = e/d 1 0 0 0 1 0 1
 ULABELS = .	              .              .
 SI_ENUM = "1=Disable,0=Enable"
