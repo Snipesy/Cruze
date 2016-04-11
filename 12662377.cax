@@ -1,8 +1,15 @@
 ; ============================
+;    _____ _  _ _____    ____    _    __  __
+;   | ____| || |___  |  / ___|  / \   \ \/ /
+;   |  _| | || |_ / /  | |     / _ \   \  / 
+;   | |___|__   _/ /   | |___ / ___ \  /  \ 
+;   |_____|  |_|/_/     \____/_/   \_\/_/\_\
+;
+; ============================       
 ; CRUZE E47 CAX
 ; Snipesy.com (C) 2016
-; ============================
-; The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
+; ============================                                  
+; The creation of this CAX file was not-endorsed, paid by, or otherwise affiliated with EFILive Limited.
 ; This CAX file comes with absolutely no warranty to the extent permitted by law.
 ; ===============================================================================
 ; This file goes into %programfiles(x86)%\EFILive\V7.5\Calibrations for 64 bit systems
@@ -33,7 +40,7 @@ Desc.009 = This CAX file comes with absolutely no warranty to the extent permitt
 Desc.010 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
 Desc.011 = At this time this cax is still very unfinished. Use at own risk.
 Desc.012 = 
-Desc.013 = Current Version: V4.1.0 (Mar 24)
+Desc.013 = Current Version: V4.1.1 (Apr 11)
 Desc.014 = 
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
@@ -46,8 +53,8 @@ SI_COL = .
 ; ===============================================================================
 [B0001]
 DESC.001 = Stored VIN in the ECM
-DESC.002 = I tried to get EFI to see the VIN directly, but it wouldn't read it. So I included it as a seperate table.
-DESC.003 = Only use CALIBRATION only flashes. Do not full flash unless absolutely necessary. The CAX will convert the VIN to ASCII for you.
+DESC.002 = 
+DESC.003 = 
 VIEW = 7 "VIN" "ECM Properties" "" 1 2 0 0
 ADDR = 3FE000 0 8 SED 0
 SI_SLOT = ASCII 1 0 0 0 256 0 256
@@ -1364,6 +1371,19 @@ IM_ENUM = .
 SI_COL = .
 SI_ROW = "Volts" "0.15,0.23,0.25,0.35,0.45,0.55,0.65,0.75,0.85,0.95,1.05,1.15,1.25,1.35,1.45,1.55,1.65,1.75,1.85,1.95,2.05,2.15,2.25,2.25,2.25"
 ; ===============================================================================
+[B1207]
+Desc.001 =  
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "MAF Sensor Curve" "Engine Sensors" "" 1 2 0 0
+ADDR = 380BEC 0 16 SNM 0
+SI_SLOT = Grams/Secs 0.027876 0 1 -100 1000 -100 1000
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = .
+SI_ROW = "Hertz" "11344.30,8403.34,6279.40,5002.46,4214.92,3629.06,3189.74,2889.29,2578.60,2433.33,2290.11,2173.15,2070.55,2006.37,1937.55,1868.40,1848.89,1835.14,1816.14,1797.54,1784.54,1766.57,1708.91,1658.87,1617.28,1559.76,1504.72,1448.69,1442.94,1438.79,1436.72,1434.66,1432.61,1430.56,1428.51,1426.48,1424.44,1422.42,1420.40,1418.38,1416.37,1414.37,1412.37,1410.38,1408.39,1406.41,1404.44,1402.47,1400.50,1398.54,1396.59,1394.64,1392.70,1390.76,1388.83,1386.90,1384.98"
+; ===============================================================================
 [B2001]
 DESC.001 = 19x16. 
 Desc.002 = 
@@ -2308,45 +2328,6 @@ IM_ENUM = .
 SI_COL = .
 SI_ROW = .
 ; ===============================================================================
-[EXP2195]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
-VIEW = 2 "SCR Systems Fitted" "Experimental" "TrashCan (wrong)" 1 1 0 0
-ADDR = 3ED56A 0 8 SED 0
-SI_SLOT = e/d 1 0 0 0 1 0 1
-ULABELS = .	              .              .
-SI_ENUM = "1=Disable,0=Enable"
-IM_ENUM = .
-SI_COL = .
-SI_ROW = .
-; ===============================================================================
-[EXP2196]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
-VIEW = 2 "SCR Injector Controller" "Experimental" "TrashCan (wrong)" 1 1 0 0
-ADDR = 3ED56B 0 8 SED 0
-SI_SLOT = e/d 1 0 0 0 1 0 1
-ULABELS = .	              .              .
-SI_ENUM = "1=Disable,0=Enable"
-IM_ENUM = .
-SI_COL = .
-SI_ROW = .
-; ===============================================================================
-[EXP2197]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
-VIEW = 2 "SCR Injector Fitted" "Experimental" "TrashCan (wrong)" 1 1 0 0
-ADDR = 3ED56D 0 8 SED 0
-SI_SLOT = e/d 1 0 0 0 1 0 1
-ULABELS = .	              .              .
-SI_ENUM = "1=Disable,0=Enable"
-IM_ENUM = .
-SI_COL = .
-SI_ROW = .
-; ===============================================================================
 [EXP2250]
 DESC.001 = 
 Desc.002 = 
@@ -2501,6 +2482,46 @@ Desc.002 =
 Desc.003 = 
 VIEW = 8 "DEF Low, Speed Limit 4" "Speed Limiting" "" 1 1 0 0
 ADDR = 3ED86C 0 16 UNM 0
+SI_SLOT = KMH .01 0 1 0 327 0 327
+; ===============================================================================
+[B8231]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 8 "Misc Speed Limit 1" "Speed Limiting" "" 1 1 0 0
+ADDR = 325480 0 16 UNM 0
+SI_SLOT = KMH .01 0 1 0 327 0 327
+; ===============================================================================
+[B8232]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 8 "Misc Speed Limit 2" "Speed Limiting" "" 1 1 0 0
+ADDR = 325482 0 16 UNM 0
+SI_SLOT = KMH .01 0 1 0 327 0 327
+; ===============================================================================
+[B8233]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 8 "Misc Speed Limit 3" "Speed Limiting" "" 1 1 0 0
+ADDR = 325484 0 16 UNM 0
+SI_SLOT = KMH .01 0 1 0 327 0 327
+; ===============================================================================
+[B8234]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 8 "Misc Speed Limit 4" "Speed Limiting" "" 1 1 0 0
+ADDR = 33654C 0 16 UNM 0
+SI_SLOT = KMH .01 0 1 0 327 0 327
+; ===============================================================================
+[B8235]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 8 "Misc Speed Limit 5" "Speed Limiting" "" 1 1 0 0
+ADDR = 336552 0 16 UNM 0
 SI_SLOT = KMH .01 0 1 0 327 0 327
 ; ===============================================================================
 ; ===============================================================================
