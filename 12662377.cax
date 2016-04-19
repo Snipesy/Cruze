@@ -40,7 +40,7 @@ Desc.009 = This CAX file comes with absolutely no warranty to the extent permitt
 Desc.010 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
 Desc.011 = At this time this cax is still very unfinished. Use at own risk.
 Desc.012 = 
-Desc.013 = Current Version: V4.1.1 (Apr 11)
+Desc.013 = Current Version: V4.1.2 (Apr 18)
 Desc.014 = 
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
@@ -2179,7 +2179,7 @@ ADDR = 3A8236 0 16 SNM 0
 SI_SLOT = factor 0.0001220703125 0 2 0 3 0 3
 ULABELS = .	              .              .
 SI_ENUM = .
-IM_ENUM = .=
+IM_ENUM = .
 SI_COL = .
 SI_ROW = "kPa" "84.00,86.00,88.00,90.00,92.00,94.00,96.00,98.00"
 ; ===============================================================================
@@ -2200,7 +2200,7 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "Sensor Fitted" "Airflow" "Environment Pressure Sensor" 1 1 0 0
+VIEW = 2 "Sensor Fitted" "Airflow" "Environment Pressure Sensor" 0 1 0 0
 ADDR = 3A8250 0 8 SMN 0
 SI_SLOT = value 1 0 1 0 2 0 2
 ULABELS = .	              .              .
@@ -2213,7 +2213,7 @@ SI_ROW = .
 DESC.001 = Determines whether the pressure is given by hardware or by CAN.
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "Hardware or CAN" "Airflow" "Environment Pressure Sensor" 1 1 0 0
+VIEW = 2 "Hardware or CAN" "Airflow" "Environment Pressure Sensor" 0 1 0 0
 ADDR = 3A81BE 0 8 SMN 0
 SI_SLOT = value .1 0 1 0 2 0 2
 ULABELS = .	              .              .
@@ -2315,19 +2315,6 @@ SI_ROW = .
 ; ===============================================================================
 ; ===============================================================================
 ; ===============================================================================
-[EXP2191]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = NOTE: Disabling, removal or tampering with emissions related engine components may be illegal in your area, even for off road / racing applications, please check with your local environmental authorities before making any changes.
-VIEW = 2 "DPF 2" "Experimental" "Vehicle Options" 1 1 0 0
-ADDR = 3D9A8B 0 8 SED 0
-SI_SLOT = e/d 1 0 0 0 1 0 1
-ULABELS = .	              .              .
-SI_ENUM = "1=Enable,0=Disable"
-IM_ENUM = .
-SI_COL = .
-SI_ROW = .
-; ===============================================================================
 [EXP2250]
 DESC.001 = 
 Desc.002 = 
@@ -2342,96 +2329,6 @@ SI_COL = .
 SI_ROW = .
 ; ===============================================================================
 ; ===============================================================================
-[EXP6020]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Mode Assignment 1" "Experimental" "Mode Assignments" 1 2 0 0
-ADDR = "38CCF7,38CCFC,38CD01,38CD06,38CD0B,38CD10" 0 8 SED 0
-SI_SLOT = Mode 1 0 0 0 5 0 5
-ULABELS = .	              .              .
-SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-SI_COL = "Number" "0,1,2,3,4,5"
-SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
-; ===============================================================================
-[EXP6021]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Mode Assignment 2" "Experimental" "Mode Assignments" 1 2 0 0
-ADDR = "38CDA9,38CDAE,38CDB3,38CDB8,38CDBD,38CDC2" 0 8 SED 0
-SI_SLOT = Mode 1 0 0 0 5 0 5
-ULABELS = .	              .              .
-SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-SI_COL = "Number" "0,1,2,3,4,5"
-SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
-; ===============================================================================
-[EXP6022]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Mode Assignment 3" "Experimental" "Mode Assignments" 1 2 0 0
-ADDR = "38CE16,38CE1B,38CE20,38CE25,38CE2A,38CE2F" 0 8 SED 0
-SI_SLOT = Mode 1 0 0 0 5 0 5
-ULABELS = .	              .              .
-SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-SI_COL = "Number" "0,1,2,3,4,5"
-SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
-; ===============================================================================
-[EXP6023]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Mode Assignment 4" "Experimental" "Mode Assignments" 1 2 0 0
-ADDR = "38E6ED,38E6F2,38E6F7,38E6FC,38E701,38E706" 0 8 SED 0
-SI_SLOT = Mode 1 0 0 0 5 0 5
-ULABELS = .	              .              .
-SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-SI_COL = "Number" "0,1,2,3,4,5"
-SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
-; ===============================================================================
-[EXP6024]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Mode Assignment 5" "Experimental" "Mode Assignments" 1 2 0 0
-ADDR = "38ED7D,38ED82,38ED87,38ED8C,38ED91,38ED96" 0 8 SED 0
-SI_SLOT = Mode 1 0 0 0 5 0 5
-ULABELS = .	              .              .
-SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-SI_COL = "Number" "0,1,2,3,4,5"
-SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
-; ===============================================================================
-[EXP6025]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Mode Assignment 6" "Experimental" "Mode Assignments" 1 2 0 0
-ADDR = "38EE2D,38EE32,38EE37,38EE3C,38EE41,38EE46" 0 8 SED 0
-SI_SLOT = Mode 1 0 0 0 5 0 5
-ULABELS = .	              .              .
-SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-SI_COL = "Number" "0,1,2,3,4,5"
-SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
-; ===============================================================================
-[EXP6026]
-DESC.001 = 
-Desc.002 = 
-Desc.003 = 
-VIEW = 2 "Mode Assignment 7" "Experimental" "Mode Assignments" 1 2 0 0
-ADDR = "38EE9A,38EE9F,38EEA4,38EEA9,38EEAE,38EEB3" 0 8 SED 0
-SI_SLOT = Mode 1 0 0 0 5 0 5
-ULABELS = .	              .              .
-SI_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-IM_ENUM = "0=Mode_0,1=Mode_1,2=Mode_2,3=Mode_3"
-SI_COL = "Number" "0,1,2,3,4,5"
-SI_ROW = "Engine Run State" "Normal,Regen1,Regen2,HCCI,Unknown"
 ; ===============================================================================
 ; 
 ; ===============================================================================
