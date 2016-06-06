@@ -17,3 +17,8 @@ Unlocking the Cruze, one byte at a time.
 # Wiki
 
 Check out the wiki (https://github.com/Snipesy/Cruze/wiki) for some in depth explanations.
+
+# Donations
+
+If you wish to show your appreciation for the cax,
+<a href='https://pledgie.com/campaigns/31855'><img alt='Click here to lend your support to: E47 Cax by Justin Hoogestraat and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/31855.png?skin_name=chrome' border='0' ></a>
