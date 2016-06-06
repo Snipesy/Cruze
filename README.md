@@ -23,3 +23,5 @@ Check out the wiki (https://github.com/Snipesy/Cruze/wiki) for some in depth exp
 If you wish to show your appreciation for the cax,
 
 <a href='https://pledgie.com/campaigns/31855'><img alt='Click here to lend your support to: E47 Cax by Justin Hoogestraat and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/31855.png?skin_name=chrome' border='0' ></a>
+
+[You can also donate directly here.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LB8E2K53H5F7A&lc=US&item_name=E47%20Cax%20by%20Justin%20Hoogestraat&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
