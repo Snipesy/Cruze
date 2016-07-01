@@ -2,8 +2,10 @@
 Unlocking the Cruze, one byte at a time.
 
 # Installation
-(assuming defaults, these paths will be correct 100% of the time)
+Assuming default installation...
 
+* https://github.com/Snipesy/Cruze/archive/master.zip 
+* Click the above link. Use the files from the .zip as **copying the files directly from your browser will cause artifiacts**.
 * Place 12662377.cax and 12658788.cax into "%programfiles(x86)%\EFILive\V7.5\Calibrations\" for 64 bit systems or "%programfiles%\EFILive\V7.5\Calibrations" for 32 bit systems.
 * Place E47_Link.ini into "%programfiles(x86)%\EFILive\V7.5\Configuration\" for 64 bit systems or "%programfiles%\EFILive\V7.5\Configuration" for 32 bit systems.
 
