@@ -8,6 +8,8 @@ Assuming default installation...
 * Click the above link. Use the files from the .zip as **copying the files directly from your browser will cause artifiacts**.
 * Place 12662377.cax and 12658788.cax into "%programfiles(x86)%\EFILive\V7.5\Calibrations\" for 64 bit systems or "%programfiles%\EFILive\V7.5\Calibrations" for 32 bit systems.
 * Place E47_Link.ini into "%programfiles(x86)%\EFILive\V7.5\Configuration\" for 64 bit systems or "%programfiles%\EFILive\V7.5\Configuration" for 32 bit systems.
+* %programfiles(x86)% and %programfiles% are system enviorement variables. You can try "echo %programfiles%" in command prompt to verify.
+
 
 # Disclaimer
 
