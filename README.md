@@ -1,6 +1,15 @@
 # Cruze
 Unlocking the Cruze, one byte at a time.
 
+# Background
+
+The project was started by Justin Hoogestraat 'Snipesy' in January 2016. It originally started as a simply post on the CruzeTalk forums to explore the inner workings of the ECM. It has since evolved to be a heavilly featured platform for tuning the Cruze.
+
+### Other Contributors
+
+* Men and Women at https://www.efilive.com/ for supplying the tools and software to make this project a reality.
+* Donatas Jasulaitis for contributing to the development.
+
 # Installation
 Assuming default installation...
 
