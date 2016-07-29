@@ -22,11 +22,12 @@
 ; ===============================================================================
 ; Known Issues
 ; * The Injection Tables are labelled incorrectly. No fix is in sight.
-; * The EGR Controller disable doesn't work as expected. (which is why it's in the experimental section)
+;
 ;
 ; ANSI NO BREAK SPACE ->                                <-
 ;
-; Note all adresses are realisticlly + 80000000 in the ECM.
+; Note all adresses are +80000000h in the ECM
+;
 [B0000]
 DESC.001 = If you are reading this, then the .cax file succesfully loaded (hurray!). It's possible that in the future EFI Live may add support which will cause conflicts.
 DESC.002 = This CAX is made for the 2014 North American Diesel Cruze, and will work for 2015s as well using the 12662377 and 12658788 Operating Systems. For further references and the latest .cax file, visit https://github.com/Snipesy/Cruze
@@ -38,9 +39,9 @@ Desc.007 =
 Desc.008 = ---- DISCLAIMERS ----
 Desc.009 = This CAX file comes with absolutely no warranty to the extent permitted by law.
 Desc.010 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
-Desc.011 = At this time this cax is still very unfinished. Use at own risk.
+Desc.011 = 
 Desc.012 = 
-Desc.013 = Current Version: 'Smokey' v5.2.0 (July 1)
+Desc.013 = Current Version: 'TimeWarp' v5.3.0 (July 29)
 Desc.014 = 
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
@@ -1162,6 +1163,46 @@ IM_ENUM = .
 SI_COL = RPM "1000.0,1250.0,1500.0,1750.0,2000.0,2250.0,2500.0,2750.0,3000.0,3250.0,3500.0,3750.0,4000.0,4250.0,4500.0"
 SI_ROW = "Commanded Fuel mm3" "0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,50.0,60.0,70.0,80.0,90.0,100.0,105.0"
 ; ===============================================================================
+; ===============================================================================
+; ===============================================================================
+[B6139]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Main Injection Limit 2" "Injection Timing" "Limit" 1 3 0 0
+ADDR = 347630 0 16 SNM 0
+SI_SLOT = Degrees 0.021973 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "750,1000,1250,1500,1750,2000,2500,3000,3500,4000,4500,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,30,40,50,60,70,80,90"
+; ===============================================================================
+[B6140]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Main Injection Limit 2" "Injection Timing" "Limit" 1 3 0 0
+ADDR = 3477C8 0 16 SNM 0
+SI_SLOT = Degrees 0.021973 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "750,1000,1250,1500,1750,2000,2500,3000,3500,4000,4500,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,30,40,50,60,70,80,90"
+; ===============================================================================
+[B6141]
+DESC.001 = 
+Desc.002 = 
+Desc.003 = 
+VIEW = 2 "Main Injection Limit 3" "Injection Timing" "Limit" 1 3 0 0
+ADDR = 34791C 0 16 SNM 0
+SI_SLOT = Degrees 0.021973 0 1 -25 50 -25 50
+ULABELS = .	              .              .
+SI_ENUM = .
+IM_ENUM = .
+SI_COL = RPM "750,1000,1250,1500,1750,2000,2500,3000,3500,4000,4500,5000"
+SI_ROW = "Commanded Fuel mm3" "0,5,10,15,20,30,40,50,60,70,80,90"
 ; ===============================================================================
 ; ===============================================================================
 ; ===============================================================================
