@@ -16,7 +16,7 @@
 ; or %programfiles%\EFILive\V7.5\Calibrations for 32 bit systems.
 ; ===============================================================================
 ; ===============================================================================
-; This cax made for the E47 ECM is licensed under a Creative Commons Attribution 4.0 International License.
+; This cax made for the E47 ECM is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 ; Made by Justin Hoogestraat "Snipesy"
 ; ===============================================================================
 ; ===============================================================================
@@ -41,7 +41,7 @@ Desc.009 = This CAX file comes with absolutely no warranty to the extent permitt
 Desc.010 = The creation of this CAX file was not endorsed, paid by, or otherwise affiliated with EFILive Limited.
 Desc.011 = 
 Desc.012 = 
-Desc.013 = Current Version: 'TimeWarp' v5.3.0 (July 29)
+Desc.013 = Current Version: 'TimeWarp' v5.4.0 (October 3 2016)
 Desc.014 = 
 VIEW = 2 "--- !!!CAX INFORMATION!!! ---" "" "" 1 1 0 0
 ADDR = 000000 0 16 SED 0
@@ -1802,7 +1802,7 @@ SI_ROW = "Deg/C" "-130,-120,-110,-100,-90,-80,-70,-60,-50,-40,-30,-20,-10,0,10,2
 DESC.001 = These tables are depreceated but included in case of previous changing.
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "Torque Limit vs RPM 1" "DEPRECATED" "Torque Control/Limiting" 1 2 0 0
+VIEW = 2 "Master Torque Limit vs RPM 1" "Torque Limiting" "" 1 2 0 0
 ADDR = 3204B0 0 16 SNM 0
 SI_SLOT = Nm 0.1 0 1 0 7000 0 7000
 ULABELS = .	              .              .
@@ -1815,7 +1815,7 @@ SI_ROW = "RPM" "0,400,410,750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,
 DESC.001 = These tables are depreceated but included in case of previous changing.
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "Torque Limit vs RPM 2" "DEPRECATED" "Torque Control/Limiting" 1 2 0 0
+VIEW = 2 "Master Torque Limit vs RPM 2" "Torque Limiting" "" 1 2 0 0
 ADDR = 320516 0 16 SNM 0
 SI_SLOT = Nm 0.1 0 1 0 7000 0 7000
 ULABELS = .	              .              .
@@ -1828,7 +1828,7 @@ SI_ROW = "RPM" "0,400,410,750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "BTM Torque Higher Enable" "Torque Limiting" "" 1 1 0 0
+VIEW = 2 "BTM Torque Higher Enable" "Torque Limiting" "Traditional" 1 1 0 0
 ADDR = 3A6844 0 16 SNM 0
 SI_SLOT = nm .1 0 0 0 1000 0 1000
 ULABELS = .	              .              .
@@ -1841,7 +1841,7 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "BTM Torque Lower Disable" "Torque Limiting" "" 1 1 0 0
+VIEW = 2 "BTM Torque Lower Disable" "Torque Limiting" "Traditional" 1 1 0 0
 ADDR = 3A6846 0 16 SNM 0
 SI_SLOT = nm .1 0 0 0 1000 0 1000
 ULABELS = .	              .              .
@@ -1854,7 +1854,7 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "BTM Max Torque When Active" "Torque Limiting" "" 1 1 0 0
+VIEW = 2 "BTM Max Torque When Active" "Torque Limiting" "Traditional" 1 1 0 0
 ADDR = 3A6848 0 16 SNM 0
 SI_SLOT = nm .1 0 0 0 1000 0 1000
 ULABELS = .	              .              .
@@ -1867,7 +1867,7 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "BTM Speed High Enable" "Torque Limiting" "" 1 1 0 0
+VIEW = 2 "BTM Speed High Enable" "Torque Limiting" "Traditional" 1 1 0 0
 ADDR = 3A697C 0 16 SNM 0
 SI_SLOT = KMH .01 0 0 0 1000 0 1000
 ULABELS = .	              .              .
@@ -1880,7 +1880,7 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "BTM Speed Lower Disable" "Torque Limiting" "" 1 1 0 0
+VIEW = 2 "BTM Speed Lower Disable" "Torque Limiting" "Traditional" 1 1 0 0
 ADDR = 3A697E 0 16 SNM 0
 SI_SLOT = KMH .01 0 0 0 1000 0 1000
 ULABELS = .	              .              .
@@ -1893,7 +1893,7 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "BTM Throttle Upper Enable" "Torque Limiting" "" 1 1 0 0
+VIEW = 2 "BTM Throttle Upper Enable" "Torque Limiting" "Traditional" 1 1 0 0
 ADDR = 3A6832 0 16 SNM 0
 SI_SLOT = % 0.01220703125 0 0 0 255 0 255
 ULABELS = .	              .              .
@@ -1906,7 +1906,7 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "BTM Throttle Lower Disable" "Torque Limiting" "" 1 1 0 0
+VIEW = 2 "BTM Throttle Lower Disable" "Torque Limiting" "Traditional" 1 1 0 0
 ADDR = 3A6834 0 16 SNM 0
 SI_SLOT = % 0.01220703125 0 0 0 255 0 255
 ULABELS = .	              .              .
@@ -1919,7 +1919,7 @@ SI_ROW = .
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "System Error Torque Limitation 1" "Torque Limiting" "" 1 2 0 0
+VIEW = 2 "Fault Torque Limitation 1" "Torque Limiting" "Traditional" 1 2 0 0
 ADDR = 3A687E 0 16 SNM 0
 SI_SLOT = nm .1 0 1 0 1000 0 1000
 ULABELS = .	              .              .
@@ -1932,7 +1932,7 @@ SI_ROW = "RPM" "0,600,850,1000,1250,1500,1750,2000,2500,2800,3200,3600,3750,4000
 DESC.001 = 
 Desc.002 = 
 Desc.003 = 
-VIEW = 2 "System Error Torque Limitation 2" "Torque Limiting" "" 1 2 0 0
+VIEW = 2 "Fault Torque Limitation 2" "Torque Limiting" "Traditional" 1 2 0 0
 ADDR = 3A68E4 0 16 SNM 0
 SI_SLOT = nm .1 0 1 0 1000 0 1000
 ULABELS = .	              .              .
@@ -1940,23 +1940,6 @@ SI_ENUM = .
 IM_ENUM = .
 SI_COL = .
 SI_ROW = "RPM" "0,600,850,1000,1250,1500,1750,2000,2500,2800,3200,3600,3750,4000,4100,4300,4400,4500,5000,5300,5400,5500,5600,5800,6000"
-; ===============================================================================
-; ===============================================================================
-[B5931]
-Desc.001 = These are based on byte patterns based on LML and other GM vehicles. If these don't suffice go into the cax follow the instructions at B5931
-; ==== DELETE OR COMMENT OUT EVERYTHING BELOW HERE
-VIEW = 2 "Enable Flags Group" "Torque Limiting" "" 1 4 0 0
-ADDR = 3A6838 0 1 SED 0
-SI_SLOT = e/d 1 0 0 0 1 0 1
-SI_ENUM = "0=Disable,1=Enabled"
-SI_ROW = # "Throttle Position,Vehicle Speed,Gear Check,Gearbox Auto,Brake Pressed,No Torque Errors,Vehicle Speed 2,High Torque,Brake Pedal 2"
-; ==== STOP
-; UNCOMMENT THESE LINES
-;VIEW = 2 "Enable Flags Group" "Torque Limiting" "" 1 1 0 0
-;ADDR = 3A6838 0 16 SED 0
-;SI_SLOT = hex 1 0 0 0 25665 0 25665
-;SI_ENUM = "0=Disable,19661=Stock"
-; ==== STOP
 ; ===============================================================================
 ; ===============================================================================
 [B1200]
